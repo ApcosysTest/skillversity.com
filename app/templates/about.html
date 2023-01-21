@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\about.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block home %}
+    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+    <li><a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a></li>
+    <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a></li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container about-body">
+        <h3>About us</h3>
+        <div class="container img"></div>
+        <p style="padding-top: 40px;">Sversity is the online edu. Tech division of Apcosys Private Limited and Apcosys is a software development and consultancy company with headquarter in Bangalore, India.</p>
+        <p>Sversity online learning destination, offering high-quality courses from the world's best universities and institutions to learners everywhere. In the age of internet, do we really need to spend huge amount on getting degrees? One can equally quench his third for knowledge by joining online classes.</p>
+    </div>
+
+{% endblock %}

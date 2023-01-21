@@ -1,0 +1,821 @@
+/* Image Banner */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/Mask_Group_9.png");
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom-right-radius: 50px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    color: white;
+}
+
+.hero-text .btn {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px 50px;
+    color: white;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.hero-text .btn:hover {
+    background-color: #555;
+    color: white;
+}
+
+.hero-image .sub{
+    display: flex;
+    justify-content: space-between;
+}
+
+.courses h1{
+    color: #FF6500;
+    padding-top: 40px;
+    font-weight: 500;
+}
+
+.invester-text ion-icon{
+    color: #fff;
+}
+
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .hero-text {
+        width: 400px;
+        top: 35%;
+    }
+
+    .hero-text h1{
+        font-size: 35px;
+        font-weight: 400;
+        padding-bottom: 30px;
+    }
+
+    .hero-image .sub{
+        padding-top: 530px;
+    }
+    
+    .hero-image .sub .tab{
+        font-size: 20px;
+    }
+
+    .hero-image .sub .tab p{
+        margin-top: 9px;
+        font-weight: 600;
+        padding-left: 5px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 48px !important;
+    }
+
+    .courses h1{
+        font-size: 30px;
+        padding-top: 60px;
+    }
+
+    .courses .even, .courses .odd{
+        padding-top: 60px;
+    }
+
+    .courses .even .course-text{
+        order: 1;
+    }
+
+    .courses .even .course-image{
+        order: 2;
+    }
+
+    .course-image img{
+        width: 267px; 
+    }
+
+    .course-text h3{
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .course-text p{
+        padding-bottom: 30px;
+        font-size: 18px;
+    }
+
+    /* course button  */
+    .course-text .btn {
+        border: 1px solid #FF6500;
+        border-radius: 2px;
+        padding: 8px 40px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .see-more{
+        padding-top: 30px;
+    }
+
+    .see-more .material-symbols-outlined{
+        color: #FF6500;
+        font-size: 60px !important;
+    }
+    
+    .see-more p{
+        padding-top: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #474747;
+    }
+
+    .b-instructor{
+        padding-bottom: 60px;
+    }
+
+    .instructor {
+        height: 260px;
+    }
+
+    .instructor-text h3{
+        padding-top: 180px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    .b-instructor p{
+        margin: 0 250px 0 250px;
+        text-align: center;
+        padding-top: 40px;
+        font-size: 22px;
+        font-weight: 300;
+        padding-bottom: 30px;
+    }
+
+    .p-instructor .btn{
+        padding: 8px 40px;
+        font-size: 16px;
+    }
+
+    .invester {
+        height: 260px;
+    }
+
+    .invester-text h3{
+        padding-top: 180px;
+        font-size: 30px;
+    }
+
+    .invester-text ion-icon{
+        padding-top: 178px;
+        font-size: 40px;
+        padding-left: 10px;
+    }
+
+    .top-subscribe{
+        padding-top: 60px;
+    }
+
+    .subscribe{
+        height: 300px;
+    }
+
+    .subscribe-image{
+        width: 50%;
+        padding-top: 60px;
+    }
+
+    .subscribe-image img{
+        width: 275px; 
+        align-content: center;
+    }
+
+    .subscribe-text{
+        padding-top: 120px;
+    }
+
+    .subscribe-text h3{
+        font-size: 22px;
+    }
+
+    .subscribe-text .get-app{
+        padding-top: 20px;
+    }
+
+    .subscribe-text .btn{
+        padding: 2px;
+    }
+    
+    .subscribe-text .btn {
+        padding: 6px 30px;
+        border-radius: 2px;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .hero-text {
+        width: 400px;
+        top: 35%;
+    }
+
+    .hero-image .sub{
+        padding-top: 530px;
+    }
+    
+    .hero-image .sub .tab{
+        font-size: 18px;
+    }
+
+    .hero-image .sub .tab p{
+        margin-top: 8px;
+        padding-left: 5px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 40px !important;
+    }
+
+    .courses h1{
+        font-size: 30px;
+        padding-top: 60px;
+    }
+
+    .courses .even, .courses .odd{
+        padding-top: 60px;
+    }
+
+    .course-image img{
+        width: 267px; 
+    }
+
+    .course-text h3{
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .course-text p{
+        padding-bottom: 3px;
+        font-size: 18px;
+    }
+
+    /* course button  */
+    .course-text .btn {
+        border: 1px solid #FF6500;
+        border-radius: 2px;
+        padding: 8px 40px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .see-more{
+        padding-top: 30px;
+    }
+    
+    .see-more p{
+        padding-top: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #474747;
+    }
+
+    .b-instructor{
+        padding-bottom: 60px;
+    }
+
+    .instructor {
+        height: 260px;
+    }
+
+    .instructor-text h3{
+        padding-top: 180px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    .b-instructor p{
+        margin: 0 200px 0 200px;
+        text-align: center;
+        padding-top: 40px;
+        font-size: 22px;
+        font-weight: 300;
+        padding-bottom: 30px;
+    }
+
+    .p-instructor .btn{
+        padding: 8px 40px;
+        font-size: 16px;
+    }
+
+    .invester {
+        height: 260px;
+    }
+
+    .invester-text h3{
+        padding-top: 180px;
+        font-size: 30px;
+    }
+
+    .invester-text ion-icon{
+        padding-top: 178px;
+        font-size: 40px;
+        padding-left: 8px;
+    }
+
+    .top-subscribe{
+        padding-top: 60px;
+    }
+
+    .subscribe{
+        height: 300px;
+    }
+
+    .subscribe-image{
+        width: 50%;
+        padding-top: 60px;
+    }
+
+    .subscribe-image img{
+        width: 275px; 
+        align-content: center;
+    }
+
+    .subscribe-text{
+        padding-top: 120px;
+    }
+
+    .subscribe-text h3{
+        font-size: 22px;
+    }
+
+    .subscribe-text .btn {
+        padding: 6px 30px;
+        border-radius: 2px;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .hero-text {
+        width: 400px;
+        top: 35%;
+    }
+
+    .hero-text h1{
+        font-size: 35px;
+        font-weight: 400;
+        padding-bottom: 30px;
+    }
+
+    .hero-image .sub{
+        padding-top: 530px;
+    }
+    
+    .hero-image .sub .tab{
+        font-size: 18px;
+    }
+
+    .hero-image .sub .tab p{
+        margin-top: 8px;
+        padding-left: 3px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 40px !important;
+    }
+
+    .courses h1{
+        font-size: 30px;
+        padding-top: 60px;
+    }
+
+    .courses .even, .courses .odd{
+        padding-top: 24px;
+    }
+
+    .course-image img{
+        width: 267px;
+        border-radius: 40px 0px 0px 0px; 
+    }
+
+    .course-text h3{
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    /* course button  */
+    .course-text .btn {
+        border: 1px solid #FF6500;
+        border-radius: 2px;
+        padding: 6px 30px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .see-more{
+        padding-top: 30px;
+    }
+    
+    .see-more p{
+        padding-top: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #474747;
+    }
+
+    .b-instructor{
+        padding-bottom: 35px;
+    }
+
+    .instructor {
+        height: 240px;
+    }
+
+    .instructor-text h3{
+        padding-top: 180px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    .b-instructor p{
+        margin: 0 0 0 0;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        padding-bottom: 30px;
+    }
+
+    .p-instructor .btn{
+        padding: 8px 40px;
+        font-size: 16px;
+    }
+
+    .invester {
+        height: 260px;
+    }
+
+    .invester-text h3{
+        padding-top: 180px;
+        font-size: 30px;
+    }
+
+    .invester-text ion-icon{
+        padding-top: 178px;
+        font-size: 40px;
+        padding-left: 6px;
+    }
+
+    .top-subscribe{
+        padding-top: 34px;
+    }
+
+    .subscribe{
+        height: 300px;
+    }
+
+    .subscribe-image{
+        width: 50%;
+        padding-top: 60px;
+    }
+
+    .subscribe-image img{
+        width: 275px; 
+        align-content: center;
+    }
+
+    .subscribe-text{
+        padding-top: 120px;
+    }
+
+    .subscribe-text h3{
+        font-size: 22px;
+    }
+
+    .subscribe-text .get-app{
+        padding-top: 10px;
+    }
+
+    .subscribe-text .btn {
+        padding: 6px 30px;
+        border-radius: 2px;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .hero-image{
+        height: 272px;
+    }
+
+    .hero-text {
+        width: 192px;
+        top: 84px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .hero-text h1{
+        font-size: 18px;
+        padding-bottom: 14px;
+        line-height: 24px;
+    }
+
+    .hero-text .btn{
+        padding: 6px 30px;
+        font-size: 12px;
+        border-radius: 2px;
+    }
+
+    .hero-image .sub{
+        padding-top: 230px;
+    }
+    
+    .hero-image .sub .tab{
+        font-size: 9px;
+    }
+
+    .hero-image .sub .tab p{
+        margin-top: 5px;
+        padding-left: 3px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 21px !important;
+    }
+
+    .courses h1{
+        font-size: 16px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .courses .even, .courses .odd{
+        padding-top: 20px;
+    }
+
+    .courses{
+        margin-top: 0;
+        padding-bottom: 5px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .courses .even .course-text{
+        order: 2;
+    }
+
+    .courses .even .course-image{
+        order: 1;
+    }
+
+    .course-text h3{
+        font-size: 14px;
+        padding-top: 10px;
+        font-weight: 600;
+    }
+
+    .course-text p{
+        font-size: 12px;
+        line-height: 18px;
+        padding-bottom: 8px;
+    }
+
+    .course-image img{
+        width: 267px; 
+        height: 236px;
+        object-fit: cover;
+    }
+
+    /* course button  */
+    .course-text .btn {
+        border: 1px solid #FF6500;
+        border-radius: 2px;
+        padding: 6px 30px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .see-more{
+        padding-top: 30px;
+    }
+    
+    .see-more p{
+        padding-top: 5px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #474747;
+    }
+
+    .b-instructor{
+        padding-bottom: 60px;
+    }
+
+    .instructor {
+        height: 154px;
+    }
+
+    .instructor-text h3{
+        padding-top: 112px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .b-instructor p{
+        margin: 0 25px 0 25px;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 14px;
+        font-weight: 300;
+        padding-bottom: 30px;
+    }
+
+    .p-instructor .btn{
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+
+    .invester {
+        height: 154px;
+    }
+
+    .invester-text h3{
+        padding-top: 114px;
+        font-size: 16px;
+    }
+
+    .invester-text ion-icon{
+        padding-top: 110px;
+        font-size: 25px;
+        padding-left: 4px;
+    }
+
+    .top-subscribe{
+        padding-top: 34px;
+    }
+
+    .subscribe{
+        height: 149px;
+    }
+
+    .subscribe-image{
+        width: 50%;
+        padding-top: 18px;
+    }
+
+    .subscribe-image img{
+        width: 150px; 
+        align-content: center;
+    }
+
+    .subscribe-text{
+        padding-top: 40px;
+    }
+
+    .subscribe-text h3{
+        font-size: 14px;
+    }
+
+    .subscribe-text .get-app{
+        padding-top: 9px;
+    }
+
+    .subscribe-text .btn {
+        font-size: 10px;
+        padding: 6px 30px;
+    }
+
+    .body-modal .get-link {
+        padding-top: 10px;
+        border-radius: 2px;
+    }
+}
+
+.course-text .default {
+    border-color: #FF6500;
+    color: #FF6500;
+}
+  
+.course-text .default:hover {
+    background: #FF6500;
+    color: white;
+}
+
+.see-more{
+    justify-items: center;
+    vertical-align:middle; 
+    text-align:center
+}
+
+.instructor {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/Mask_Group_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom-right-radius: 50px;
+}
+
+.instructor-text h3{
+    text-align: center;
+    color: white;
+}
+
+.p-instructor .btn {
+    border: 1px solid #FF6500;
+    cursor: pointer;
+}
+
+.p-instructor .default {
+    border-color: #FF6500;
+    color: #FF6500;
+}
+  
+.p-instructor .default:hover {
+    background: #FF6500;
+    color: white;
+}
+
+.invester {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/Mask_Group_3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom-left-radius: 50px;
+}
+
+.invester-text h3{
+    text-align: center;
+    color: white;
+    font-weight: 300;
+}
+
+.subscribe {
+    background-color: #D9BD9A;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.subscribe-text{
+    text-align: center;
+}
+
+.subscribe-text h3{
+    font-weight: 500;
+    word-spacing: 1px;
+    letter-spacing: .5px;
+}
+
+.subscribe-text input{
+    width: 250px;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.subscribe-text input::-moz-placeholder {
+    font-size: 15px;
+} /* Firefox 19+ */
+.subscribe-text input:-moz-placeholder {
+    font-size: 15px;
+}  /* Firefox 18- */
+.subscribe-text input:-ms-input-placeholder {
+    font-size: 15px;
+} /* IE */
+.subscribe-text input::placeholder{
+    font-size: 15px;
+} /* For other Browser */
+
+.get-app{
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.subscribe-text .btn {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: white;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.subscribe-text .btn:hover {
+    color: white;
+}
+
+.subscribe-text .btn:focus{
+    color: white;
+}

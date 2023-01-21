@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\otp.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block login %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container" style=" padding-top: 25px;">
+        <div class="otp">
+            <h3 style="font-size: larger; font-weight: 500; color: #F93305;">Entered Invalid OTP</h3>
+            <p><a href="#">Back to Check Your E-Mail</a></p><br>
+            <form>
+                <div style="margin-left: 0%;" class="row">
+                    <input class="otpBox" id="ist"    type="text" placeholder="*"  onkeyup="clickEvent(this,'sec')"  maxlength=1 >
+                    <input class="otpBox" id="sec"      type="text" placeholder="*"  onkeyup="clickEvent(this,'third')"  onkeydown="removeOtp(event,'ist')"maxlength=1 >
+                    <input class="otpBox" id="third"  type="text" placeholder="*"  onkeyup="clickEvent(this,'fourth')" onkeydown="removeOtp(event,'sec')" maxlength=1 >
+                    <input class="otpBox" id="fourth" type="text" placeholder="*"  maxlength=1  onkeydown="removeOtp(event,'third')">
+                </div>
+                
+               
+                <div class="row">
+                    <div class="col-md-6" style="margin-left: 5%;" id="timer"></div>
+                    <div class="col-md-5" id="timer">
+                        <p style="text-align: end; text-decoration: none; "><a style="color: #FF6500;" href="#">Resend otp</a></p>
+                    </div>
+                </div>
+               
+                <div style="margin-top: 25%;">
+                    <button class="btn">Verify OTP</button>
+                </div>
+            </form>
+            <p style="text-align: center; text-decoration:none; font-size: 12px; padding-left: 20px; padding-right: 20px;  padding-top: 20px;"><a href="{% url 'register' %}">Back to Registration</a></p>
+        </div>
+    </div>
+
+    <script>
+        function clickEvent(first,last){
+            if(first.value.length){
+                document.getElementById(last).focus();
+            }
+        }
+        function removeOtp(e,first){
+            document.getElementById("fourth").value="";
+            if(e.code == "Backspace"){
+                document.getElementById(first).focus();
+            }
+        }
+        var timeLeft = 30;
+        var elem = document.getElementById('timer');
+        var timerId = setInterval(countdown, 1000);
+    
+        function countdown() {
+            if (timeLeft == -1) {
+            clearTimeout(timerId);
+        } else {
+                elem.innerHTML = '00:'+timeLeft ;
+                timeLeft--;
+        }
+
+    }
+    </script>
+    
+{% endblock %}

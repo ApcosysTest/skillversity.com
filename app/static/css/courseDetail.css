@@ -1,0 +1,172 @@
+.courseImage{
+    margin-left: 10%; 
+    height:fit-content; 
+    width: 100%;  
+    display: flex;  
+    padding: 5%;
+}
+
+.donotShow_row{
+    display: none;
+}
+
+.coursedetail h3{
+    font-weight: 400; 
+    color:#FF6500;
+    margin-bottom: 15px;
+}
+
+.price{
+    color: #787878;
+}
+
+.price p{
+    margin-top: 8%;
+}
+
+.down{
+    text-align: right;
+    padding-top: 2%;
+}
+
+.down button{
+    padding:8px 45px;
+    border-color: #FF6500; 
+    color: #FF6500; 
+    border-radius:3px;
+}
+
+.down button:active{
+    border-color: #FF6500 !important; 
+    color: #fff !important;
+    background-color: #FF6500 !important; 
+}
+
+.down button:hover{
+    border-color: #FF6500 !important;
+    color: #fff !important;
+    background-color: #FF6500 !important;
+}
+
+.down button:focus-visible{
+    border-color: #FF6500 !important;
+    color: #fff !important;
+    background-color: #FF6500 !important;
+}
+
+.coursedetail p{
+    color: #787878; 
+    font-size: larger;  
+    font-weight: 400;
+}
+
+@media (max-width: 575.98px) {
+    body{
+        font-family: 'Poppins';
+        font-size: 18px;
+    }
+
+    .coursedetail h3{
+        text-align: center;
+    }
+
+    .coursedetail p{
+        font-weight: 400; 
+        margin-bottom: 10px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .price p{
+        margin-top: 10px;
+        font-size: 18px !important;
+    }
+
+    .down{
+        text-align: center;
+        padding-top: 2%;
+    }
+
+    .para{
+        order: 2;
+    }
+
+    .image{
+        order: 1;
+    }
+
+    .list{
+        display: block !important;
+    }
+
+    .list h5{
+        margin-bottom: 15px !important;
+    }
+
+    .courseImage{
+        margin-left: 0px !important;
+        text-align: center;
+    }
+}
+
+thead {
+    position: sticky;
+    padding: 8px 16px;
+    top: 0;
+    margin-top:0;
+    background-color: #fff;
+}
+
+th .silver, th .gold{
+    width: 25%;
+    border-color: #797b7f;
+}
+
+th .silver:hover, th .gold:hover{
+    border-color: #797b7f;
+}
+
+th .silver:active, th .gold:active{
+    border-color: #797b7f !important;
+}
+
+#silverList, #goldList{
+    border-radius: 5px;
+}
+
+.btn-style{
+    background-color: #FF6500 !important;
+    color: #fff !important;
+    border-color: #FF6500 !important;
+}
+
+th{
+    padding: 8px 16px;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+td{
+    padding: 8px 16px;
+}
+
+.courseImage{
+    margin-left: 10%; 
+    height:fit-content; 
+    width: 100%;  
+    display: flex;  
+    padding: 5%;
+}
+
+.card-body .material-symbols-outlined{
+    font-size: 20px !important;
+    color: #FF6500 !important;
+    font-weight: 600 !important;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+}

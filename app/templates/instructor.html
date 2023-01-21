@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\instructor.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block ahome %}{% endblock %}
+{% block acourse %}{% endblock %}
+
+{% block home %}
+    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+    <li><a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a></li>
+    <li><a class="dropdown-item" href="{% url 'about' %}">About us</a></li>
+    <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<div class="container instructor-body">
+    <h3>Become an instructor</h3>
+
+    <center>  
+        <div class="container" >
+        {% if messages %}
+                <div class ="messages" style="width: 300px;">
+    
+            {% for message in messages  %}
+                    <div class="alert alert-success" role="alert">
+                        <strong style="color:font-size: 20px;">! {{message}}</strong> 
+                    </div>
+    
+            {% endfor %}
+    
+                </div>
+                
+        {% endif %}
+        </div> 
+    </center> 
+
+    <div class="instructor-form">
+        <div class="row g-0 text-left">
+            <div class="col-sm-6 col-md-6 col-lg-5 instructor-text">
+                <h3>Anywhere @ Anytime Start Teaching</h3>
+                <p>You always retain ownership of content you publish.</p>
+                <p>Help students discover their passions, acquire new skills, and progress their careers.</p>
+                <p>Develop your skills, broaden your professional network.</p>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-7 instructor-input">
+                <form method = "POST" action="/instructor">
+                    {% csrf_token %}
+                    <div class="input">
+                        <input type="text" placeholder="Your Name"  id="Name" name="Name" required>
+                    </div>
+                    <div class="input">
+                        <input type="email" placeholder="E-mail" id="Email" name="Email" required>
+                    </div>
+                    <div class="input">
+                        <input type="number" placeholder="Mobile Number" id="Contact" name="Contact" required>
+                    </div>
+                    <div class="input" style="padding-bottom: 20px;">
+                        <textarea placeholder='Write your Skills & Exprience' maxlength='500' id="textarea" name="textarea" required></textarea>
+                    </div>
+                    <button class="btn" type="submit">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

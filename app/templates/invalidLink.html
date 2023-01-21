@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\invalidLink.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block login %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="success">
+            <img class="circle" src="{% static 'image/Circle-red.png' %}" width="100px" height="100px">
+            <span class="material-symbols-outlined" style='font-weight:700 !important;'>
+                priority_high
+                </span>
+
+            <p>Link look's invalid try to generate new link to change password.!</p>
+
+            <div class="con-btn">
+                <a class="btn" href="{% url 'forgotPassword' %}">Generate Link</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block success %}
+
+{% endblock %}

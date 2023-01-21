@@ -1,0 +1,96 @@
+.login{
+    margin: auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login h3{
+    color: #FF6500;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.login p{
+    font-size: 15px;
+    padding-top: 5px;
+    color: #474747;
+}
+
+.login a{
+    color: #FF6500;
+}
+
+.login a:hover{
+    color: #FF6500;
+}
+
+.inputWithIcon .form-control {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+.inputWithIcon .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #aaa;
+}
+  
+.inputWithIcon {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.inputWithIcon .material-symbols-outlined {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    padding: 4px 8px;
+    color: #474747;
+    font-size: 28px;
+}
+
+.login .btn{
+    color: white;
+    background-color: #FF6500;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.login .btn:hover{
+    color: white;
+    background-color: #FF6500;
+}
+
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .login{
+        width: 30%;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .login{
+        width: 40%;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .login{
+        width: 50%;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .login{
+        width: 100%;
+    }
+}

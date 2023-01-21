@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\investor.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block ahome %}{% endblock %}
+{% block acourse %}{% endblock %}
+
+{% block home %}
+    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+    <li><a class="dropdown-item" href="/gallery">Gallery</a></li>
+    <li><a class="dropdown-item" href="{% url 'about' %}">About us</a></li>
+    <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<div class="container investor-body">
+    <h3>Investor</h3>
+    <p style="padding-bottom: 1%;"  >You've come to the perfect Destination. if you want to invest in a top university education company. We appreciate your decision to invest in SVERSITY.</p>
+    <center>  
+        <div class="container" >
+        {% if messages %}
+            <div class ="messages" style="width: 300px;">
+            {% for message in messages  %}
+                <div class="alert alert-success" role="alert">
+                    <strong style="color:font-size: 20px;">! {{message}}</strong> 
+                </div>
+            {% endfor %}
+            </div>    
+        {% endif %}
+        </div> 
+    </center> 
+
+    <div class="investor-form" >
+        <div class="row g-0 text-left">
+            <div class="col-sm-6 col-md-6 col-lg-5 investor-text" style="padding-left:10px;">
+                <h3>What we Offer</h3>
+                <p style="font-size: 14px;">We are bringing you the opportunity to be a part in the venture of becoming the future of education .By investing in us you will have a chance to multiply your wealth and grow with us together.</p>
+            </div>
+            
+            <div class="col-sm-6 col-md-6 col-lg-7 investor-input">
+                <form method = "POST" action="/investor">
+                    
+                    {% csrf_token %}
+                    <div class="input">
+                        <input type="text" placeholder="Your Name" id="Name" name="Name" required>
+                    </div>
+                    <div class="input">
+                        <input type="email" placeholder="E-mail" id="Email" name="Email" required>
+                    </div>
+                    <div class="input">
+                        <input type="number" placeholder="Mobile Number" id="Contact" name="Contact" required>
+                    </div>
+                    <div style="padding-top: 10%;">
+                        <button class="btn" type="submit">Send Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

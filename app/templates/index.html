@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Image banner -->
+    <div class="hero-image">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Anywhere @ Anytime Start Learning</h1>
+                <button class="btn" style="background-color: #FF6500;" data-toggle="modal" data-target="#getAppModal">Download App</button>
+            </div>
+            <div class="sub" style="display: flex;">
+                <div class="tab" style="display: flex;">
+                    <span class="material-symbols-outlined" style="color: white;">account_circle</span> 
+                    <p style="color: white;">Experienced Mentor</p>
+                </div>
+                <div class="tab" style="display: flex;">
+                    <span class="material-symbols-outlined" style="color: white;">play_circle</span> 
+                    <p style="color: white;">Quality Videos</p>
+                </div>
+                <div class="tab" style="display: flex;">
+                    <span class="material-symbols-outlined" style="color: white;">paid</span>
+                    <p style="color: white">Affordable</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses part -->
+    <div class="container">
+        <div class="courses">
+            <h1>Explore Our Courses</h1>
+            {% for b in bundle1 %}
+            <div class="row g-0 text-left {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+                <div class="col-sm-6 col-md-5 col-lg-3 course-image">
+                    <img src="{{ b.image.url }}" style="width: 250px; align-content: left;">
+                </div>
+                <div class="col-sm-6 col-md-7 col-lg-9 course-text">
+                    <h3>{{ b.name }}</h3>
+                    <p>{{ b.description }}</p>
+                    <a class="btn default" href="{% url 'courseDetail' b.id %}">Get More Details</a>
+                </div>
+            </div>
+            {% endfor %}
+
+            <span id="dots"></span>
+
+            <span id="more" style="display: none; transition: all 0.3s linear;">
+
+                {% for b in bundle2 %}
+                <div class="row g-0 text-left {% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
+                    <div class="col-sm-6 col-md-5 col-lg-3 course-image">
+                        <img src="{% static 'image/Mask_Group_4.png' %}" style="width: 250px; align-content: left;">
+                    </div>
+                    <div class="col-sm-6 col-md-7 col-lg-9 course-text">
+                        <h3>{{ b.name }}</h3>
+                        <p>{{ b.description }}</p>
+                        <a class="btn default">Get More Details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </span>
+
+        </div>
+        <div class="see-more">
+            <a style="text-decoration: none; cursor: pointer;" onclick="myFunction()">
+                <span class="material-symbols-outlined" id='img-seemore'>expand_circle_down</span>
+                <p><a style="cursor: pointer;" onclick="myFunction()" id="myBtn">See More</a></p>
+            </a>
+        </div>
+
+        <script>
+            function myFunction() {
+                var dots = document.getElementById("dots");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("myBtn");
+                var rotated = document.getElementById("img-seemore");
+            
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "See More"; 
+                    moreText.style.display = "none";
+                    rotated.style.transform = 'none';
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "See Less";
+                    moreText.style.display = "inline";
+                    rotated.style.transform = 'rotate(180deg)';
+                }
+            }
+        </script>
+
+    </div>
+
+    <!-- Become an Instructor -->
+    <div class="container b-instructor" style="padding-top: 24px;">
+        <div class="instructor">
+            <div class="instructor-text">
+                <h3>Become an Instructor</h3>
+            </div>
+        </div>
+        <div class="p-instructor">
+            <p>Join us to Teach the millions of students on sversity through out the word teach what you want in the way you want.</p>
+            <center><a class="btn default" href="{% url 'instructor' %}">Start Teaching Today</a></center>
+        </div>
+    </div>
+
+    <!-- Start Invest Our Skillversity -->
+    <div class="container-fluid invest">
+        <div class="invester">
+            <div class="invester-text" style="display: flex; justify-content: center;">
+                <a style="text-decoration:none" href="{% url 'investor' %}"><h3>Start Investing in Sversity</h3></a>
+                <a href="{% url 'investor' %}"><ion-icon name="chevron-forward-circle-outline"></ion-icon></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

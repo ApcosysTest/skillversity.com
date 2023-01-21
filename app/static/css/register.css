@@ -1,0 +1,105 @@
+.register{
+    margin: auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.register h3{
+    color: #FF6500;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.register p{
+    font-size: 15px;
+    padding-top: 5px;
+    color: #474747;
+    margin-bottom: 0px;
+}
+
+.register a{
+    color: #FF6500;
+}
+
+.register a:hover{
+    color: #FF6500;
+}
+
+.inputWithIcon .form-control {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.inputWithIcon .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #aaa;
+}
+  
+.inputWithIcon {
+    position: relative;
+    padding-top: 10px;
+}
+
+.inputWithIcon .material-symbols-outlined {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    padding: 5px 8px;
+    color: #474747;
+    font-size: 25px;
+}
+
+.errorlist{
+    color: red;
+    font-size: 12px;
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.register .btn{
+    color: white;
+    background-color: #FF6500;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.register .btn:hover, .register .btn:active{
+    color: white !important;
+    background-color: #FF6500 !important;
+}
+
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .register{
+        width: 30%;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .register{
+        width: 40%;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .register{
+        width: 50%;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .register{
+        width: 100%;
+    }
+}

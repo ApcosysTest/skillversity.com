@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\index.css' %}" rel="stylesheet">
+<link href="{% static 'css\courseDetail.css' %}" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+{% endblock %}
+
+{% block ahome %}{% endblock %}
+{% block acourse %}activee{% endblock %}
+
+{% block home %}
+    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+    <li><a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a></li>
+    <li><a class="dropdown-item" href="{% url 'about' %}">About us</a></li>
+    <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<div class="container coursedetail" style="padding: 25px 40px;">
+    <div class="row">
+        <h3>Standalone Courses</h3>
+    </div>
+</div>
+<div class="container table" id="table">
+    <div class="row">
+        <div class="col-md-12 column">
+            <div class="table-responsive-lg" style="overflow-x: hidden; height: 500px; padding-top: 0;">
+                <table id="tableFilter" class="tableFilter table-striped sticky-header" style="width: 100%;border: 1px solid;  border-color: rgb(230, 230, 230);">
+                    <thead class="tableHeader" style="text-align: center;  background-color: rgb(240, 250, 250);">
+                        <th class="button">
+                            <button type="button" id="silverList" onclick="myFunction1()" class="btn btn-outline silver btn-style" >Silver</button>
+                            <button  type="button" id="goldList" onclick="myFunction2()" class=" btn btn-outline gold " >Gold</button>
+                        </th>
+                    </thead>
+
+                    <tbody id="silver">
+                        {% for s in silver %}
+                        <tr>
+                            <td>
+                                <div class="card" style="width: 100%; z-index: -1;">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img class="card-img-top" src="{{ s.image.url }}" alt="Card image cap">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="color:#FF6500;">{{ s.name }}</h5>
+                                                <p class="card-text">{{ s.description }}</p>
+                                                <div style="display:flex; justify-content: space-between; color:black;" class="list">
+                                                    <h5><span class="material-symbols-outlined">currency_rupee</span><strong style="font-weight:400; font-size:20px; color:#FF6500;">{{s.price}}</strong></h5>
+                                                    <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{s.language}}</strong></h5>
+                                                    <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{s.medium}}</strong></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody id="gold" style="display:none;">
+                        {% for g in gold %}
+                        <tr>
+                            <td>
+                                <div class="card" style="width: 100%; z-index: -1;">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img class="card-img-top" src="{{ g.image.url }}" alt="Card image cap">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ g.name }}</h5>
+                                                <p class="card-text">{{ g.description }}</p>
+                                                <div style="display:flex; justify-content: space-between; color:black;" class="list">
+                                                    <h5><span class="material-symbols-outlined">currency_rupee</span><strong style="font-weight:400; font-size:20px; color:#FF6500;">{{g.price}}</strong></h5>
+                                                    <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{g.language}}</strong></h5>
+                                                    <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{g.medium}}</strong></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+              </div>
+            </div>
+    </div>
+    <div class="row" style="text-align: center;">
+        <a href="#DownloadApp" data-toggle="modal" data-target="#getAppModal">
+            <button type="button" class="btn btn-outline btn-block download" style="justify-content: center; margin-top: 10%;  border-color: #FF6500; color: #FF6500;">Download App To Access Full Course</button>
+        </a>
+    </div>
+</div>
+</div>
+
+<script>
+    function myFunction1() {
+        var x = document.getElementById("silver");
+        var y = document.getElementById("gold");
+        var btnx = document.getElementById("silverList")
+        var btny = document.getElementById("goldList")
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+            btnx.classList.add("btn-style");
+            btny.classList.remove("btn-style");
+        } 
+        else {
+            x.style.display = "block";
+            y.style.display = "none";
+            btnx.classList.add("btn-style");
+            btny.classList.remove("btn-style");
+        }
+    }
+    
+    function myFunction2() {
+        var x = document.getElementById("silver");
+        var y = document.getElementById("gold");
+        var btnx = document.getElementById("silverList")
+        var btny = document.getElementById("goldList")
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            y.style.display = "block";
+            btnx.classList.remove("btn-style");
+            btny.classList.add("btn-style");
+        } 
+        else {
+            x.style.display = "none";
+            y.style.display = "block";
+            btnx.classList.remove("btn-style");
+            btny.classList.add("btn-style");
+        }
+    }
+</script>
+{% endblock %}

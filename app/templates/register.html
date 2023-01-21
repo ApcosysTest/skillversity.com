@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\register.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block login %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container" style="padding-top: 25px;">
+        <div class="register">
+            <h3>Register New Account</h3>
+            <p>Already have an account click <a href="{% url 'login' %}">login</a></p>
+            <form method="POST" class="post-form" action="/register">
+                <center>  
+                    <div class="container" >
+                    {% if messages %}
+                            <div class ="messages" style="width: 300px;">
+                
+                        {% for message in messages  %}
+                                <div class="alert alert-success" role="alert">
+                                    <strong style="color:font-size: 20px;">! {{ message }}</strong> 
+                                </div>
+                
+                        {% endfor %}
+                
+                            </div>
+                            
+                    {% endif %}
+                    </div> 
+                </center> 
+                {% csrf_token %}
+                <div class="inputWithIcon">
+                    {{ form2.name }}
+                    <span class="material-symbols-outlined">account_circle</span>
+                </div>
+                {{ form2.name.errors }}
+                <div class="inputWithIcon">
+                    {{ form2.phone }}
+                    <span class="material-symbols-outlined">phone_in_talk</span>
+                </div>
+                {{ form2.phone.errors }}
+                <div class="inputWithIcon">
+                    {{ form2.email }}
+                    <span class="material-symbols-outlined">mail</span>
+                </div>
+                {{ form2.email.errors }}
+                <div class="inputWithIcon">
+                    {{ form1.username }}
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                {{ form1.username.errors }}
+                <div class="inputWithIcon">
+                    {{ form1.password }}
+                    <span class="material-symbols-outlined">lock</span>
+                </div>
+                {{ form1.password.errors }}
+                <div  style='padding-top:20px;'><button class="btn" type="submit">Create Account</button></div>
+            </form>
+            <p style="text-align: center; font-size: 11px; padding-left: 20px; padding-right: 20px; padding-top: 20px;">By proceed you are accepting terms of service and privacy policy</p>
+        </div>
+    </div>
+
+{% endblock %}

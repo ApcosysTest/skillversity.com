@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\gallery.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block home %}
+    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+    <li><a class="dropdown-item" href="{% url 'about' %}">About us</a></li>
+    <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#contactModal">Contact us</a></li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container gallery-body">
+        <h3>Gallery</h3>
+
+        <div class="container">
+            <img id="expandedImg" style="width:100%;border-bottom-right-radius: 50px;">
+            <figcaption id="imgtext" style="border-bottom-right-radius: 50px; margin-right:12px ; color: white; bottom: 0; position: absolute; padding: 10px; background: rgb(0, 0, 0);background: rgba(0, 0, 0, 0.5);""></figcaption>
+        </div>
+        <!-- The four columns -->
+        <div class="row" style="margin-top:8%;">
+            <div class="column">
+                <img class="g-img" src="{% static 'image/gallery-5.png' %}" style="width:100%" onclick="expandImg(this);" onload="myShow(this);">
+                <p hidden id="imgDes">Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.Lorem simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="column">
+                <img class="g-img" src="{% static 'image/gallery-2.png' %}" style="width:100%" onclick="expandImg(this);">
+                <p hidden id="imgDes">Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.Lorem simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="column">
+                <img class="g-img" src="{% static 'image/gallery-3.png' %}" style="width:100%" onclick="expandImg(this);">
+                <p hidden id="imgDes">Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.Lorem simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="column">
+                <img class="g-img" src="{% static 'image/gallery-4.png' %}" style="width:100%" onclick="expandImg(this);">
+                <p hidden id="imgDes">Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.Lorem simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+            </div>
+            <div class="column">
+                <img class="g-img" src="{% static 'image/gallery-1.png' %}" alt="Lights" style="width:100%" onclick="expandImg(this);">
+                <p hidden id="imgDes">Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.Lorem simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myShow(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            var imgDes = document.getElementById("imgDes").innerText;
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgDes;
+            expandImg.parentElement.style.display = "block";
+        }
+
+        function expandImg(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            var imgDes = document.getElementById("imgDes").innerText;
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgDes;
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
+
+{% endblock %}

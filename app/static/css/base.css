@@ -1,0 +1,387 @@
+@font-face {
+    font-family: popLight;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+* {
+    font-family: popLight;
+}
+
+nav{
+    padding: 0px;
+}
+.navbar{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Brand */
+.navbar a{
+    color: #FF6500;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+/* Navbar tabs */
+.nav-item{
+    padding-right: 10px;
+}
+
+.navbar a:hover{
+    color: #FF6500;
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+
+.nav-item .nav-link{
+    color: #474747;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.nav-item a:hover{
+    color: #FF6500; 
+}
+
+.nav-item a:focus{
+    color: #FF6500;
+}
+
+.nav-item .join{
+    font-size: 14px;
+    background-color: #FF6500 !important; 
+    padding-left: 12px !important; 
+    padding-right: 12px !important;
+    border-radius: 4px !important;
+}
+
+.nav-item .join:active{
+    color: #fff !important;
+}
+
+.nav-link.activee{
+    color: #FF6500;
+}
+
+/* Navbar tab button */
+.nav-item .btn, .nav-item .btn:hover, .nav-item .btn:focus{
+    border: none;
+    outline: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: inline-block;
+    color: white;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.dropdown-menu .dropdown-item{
+    color: #474747;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: #FF6500;
+    color: white;
+}
+
+.dropdown-menu .dropdown-item:focus{
+    background-color: #FF6500;
+    color: white;
+    border-radius: 2px !important;
+}
+
+.dropdown-menu{
+    margin-top: 12px !important;
+    padding: 0 !important;
+    border-radius: 2px !important;
+}
+
+/* Modal for get app  */
+.body-modal{
+    padding-top: 80px;
+    text-align: center;
+}
+
+.body-modal input{
+    width: 250px;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    color: #434343;
+    font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+    cursor: pointer;
+    color: #101010;
+}
+
+#contactModal .body-modal{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#contactModal h3{
+    font-size: 20px;
+}
+
+#contactModal .input{
+    padding: 8px 50px;
+}
+
+#contactModal input, #contactModal textarea{
+    width: 100%;
+}
+
+#contactModal textarea{
+    height: 100px;
+    padding-left: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#contactModal .body-modal input::-moz-placeholder, #contactModal .body-modal textarea::-moz-placeholder {
+    font-size: 15px;
+    text-align: left;
+} /* Firefox 19+ */
+#contactModal .body-modal input:-moz-placeholder, #contactModal .body-modal textarea:-moz-placeholder {
+    font-size: 15px;
+    text-align: left;
+}  /* Firefox 18- */
+#contactModal .body-modal input:-ms-input-placeholder, #contactModal .body-modal textarea:-ms-input-placeholder {
+    font-size: 15px;
+    text-align: left;
+} /* IE */
+#contactModal .body-modal input::placeholder, #contactModal .body-modal textarea::placeholder{
+    font-size: 15px;
+    text-align: left;
+} /* For other Browser */
+
+#contactModal .body-modal .btn {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px 40px;
+    color: white;
+    background-color: #FF6500;
+    text-align: center;
+    cursor: pointer;
+}
+
+.body-modal button:hover {
+    color: white;
+    background-color: #dd5800;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+#getAppModal .body-modal input::-moz-placeholder {
+    font-size: 15px;
+    text-align: center;
+} /* Firefox 19+ */
+#getAppModal .body-modal input:-moz-placeholder {
+    font-size: 15px;
+    text-align: center;
+}  /* Firefox 18- */
+#getAppModal .body-modal input:-ms-input-placeholder {
+    font-size: 15px;
+    text-align: center;
+} /* IE */
+#getAppModal .body-modal input::placeholder{
+    font-size: 15px;
+    text-align: center;
+} /* For other Browser */
+
+#getAppModal .body-modal{
+    padding-top: 40px;
+}
+
+#getAppModal .body-modal p{
+    color: black;
+    padding-top: 20px;
+    font-size: 14px;
+    padding-bottom: 30px;
+    line-height: 20px;
+}
+
+#getAppModal .body-modal button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 14px 18px;
+    color: white;
+    background-color: #FF6500;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#getAppModal .body-modal .link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+#getAppModal .body-modal .link .icon{
+    color: #474747;
+    padding-left: 10px;
+}
+
+#getAppModal .body-modal .link .icon a{
+    font-size: 50px;
+    padding-right: 10px;
+}
+
+#getAppModal .body-modal .link .qrcode{
+    padding-right: 10px;
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+footer{
+    background-color: #787878;
+    padding: 0;
+}
+
+footer .footer-brand{
+    color: #FF6500;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+footer .footer-brand:hover{
+    color: #FF6500;
+}
+
+.footer-tab1, .footer-tab2, .footer-tab3{
+    line-height: 12px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.app-btn {
+    width: 80%;
+    max-width: 200px;
+    color: #fff;
+    margin: 20px 10px;
+    text-align: left;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.app-btn.blu {
+    background-color: #707070;
+    transition: background-color 0.25s linear;
+    border: 1px solid white;
+}
+
+.app-btn.blu:hover {
+    background-color: #272727;
+}
+
+.download-app a:hover{
+    color: white;
+}
+
+.app-btn ion-icon {
+    text-align: center;
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.app-btn .big-txt {
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.social-grid{
+    padding: 0px !important;
+}
+
+.social-grid:active{
+    border:none !important;
+    padding-left: 5px !important;
+}
+
+.social-grid img:focus-visible{
+    outline:none !important;
+}
+
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .footer{
+        padding-top: 80px;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .footer{
+        padding-top: 80px;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .footer{
+        padding-top: 80px;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .footer{
+        padding-top: 25px;
+    }
+
+    .footer-tab2, .footer-tab3, .footer-hr1, .footer-hr2{
+        display: none;
+    }
+
+    #contactModal .input{
+        padding: 8px 0px;
+    }
+
+    #getAppModal .body-modal input{
+        width: 200px;
+    }
+}

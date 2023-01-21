@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\registerSuccess.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block login %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="success">
+            <img class="circle" src="{% static 'image/Circle-green.png' %}" width="100px" height="100px">
+            <span class="material-symbols-outlined">mark_email_read</span>
+
+            <p>Thank you for your response, we will revert back within 48 working hours.</p>
+
+            <div class="con-btn">
+                <a class="btn" href="{% url 'index' %}">Continue</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block success %}
+
+{% endblock %}

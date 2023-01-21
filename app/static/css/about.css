@@ -1,0 +1,70 @@
+/* Body  */
+.about-body h3{
+    padding-top: 40px;
+    color: #FF6500;
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+
+.about-body .img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/about-us.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.about-body p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .about-body .img{
+        height: 500px;
+    }
+
+    .about-body p{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .about-body .img{
+        height: 500px;
+    }
+
+    .about-body p{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .about-body .img{
+        height: 300px;
+    }
+
+    .about-body p{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .about-body .img{
+        height: 200px;
+    }
+
+    .about-body p{
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: justify;
+    }
+}

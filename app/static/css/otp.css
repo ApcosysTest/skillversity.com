@@ -1,0 +1,103 @@
+.otp{
+    margin: auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    padding: 2%;
+}
+.otp h3{
+    color: #FF6500;
+    font-size: 18;
+    font-weight: 350;
+}
+
+.otp p{
+    font-size: 12px;
+    padding-top: 5px;
+    color: #474747;
+}
+
+.otp a{
+    color: #474747;
+}
+
+.otp a:hover{
+    color: #FF6500;
+}
+
+input[type="text"], input[type='email'], input[type='password'], input[type='number'] {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.inputWithIcon input[type="text"],.inputWithIcon input[type='email'],.inputWithIcon input[type='password'],.inputWithIcon input[type='number']  {
+    padding-left: 40px;
+}
+  
+.inputWithIcon {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.inputWithIcon ion-icon {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    padding: 9px 8px;
+    color: #474747;
+    font-size: 18px;
+}
+
+.otp .btn{
+    color: white;
+    background-color: #FF6500;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.otp .btn:hover{
+    color: white;
+    background-color: #FF6500;
+}
+
+form input.otpBox{
+    display:inline-block;
+     width:50px;
+      height:50px;
+      text-align:center;
+      border: 1px solid #707070;    
+      border-radius: 5px;
+      margin: 4%;
+    }
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .otp{
+        width: 30%;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .otp{
+        width: 40%;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .otp{
+        width: 50%;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .otp{
+        width: 100%;
+    }
+}

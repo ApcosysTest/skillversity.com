@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% load static %}
+<link href="{% static 'css\login.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block login %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container" style="padding-top: 25px;">
+        <div class="login">
+            <h3>Log In</h3>
+            <p>Enter your details below to continue</p>
+            <form method="POST" class="post-form" action="/login">
+                <center>  
+                    <div class="container-fluid" style='padding:0px'>
+                    {% if messages %}
+                            <div class ="messages">
+                
+                        {% for message in messages  %}
+                                <div class="alert alert-danger" role="alert">
+                                    <strong style="font-size: 14px;">! {{message}}</strong> 
+                                </div>
+                
+                        {% endfor %}
+                
+                            </div>
+                            
+                    {% endif %}
+                    </div> 
+                </center> 
+                {% csrf_token %}
+                <div class="inputWithIcon">
+                    {{ form.username }}
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <div class="inputWithIcon">
+                    {{ form.password }}
+                    <span class="material-symbols-outlined">lock</span>
+                </div>
+                <p style="text-align: end; text-decoration: none;"><a href="{% url 'forgotPassword' %}">Forgot Password?</a></p>
+                <button type="submit" class="btn ">Log In</button>
+            </form>
+            <p style="text-align: center; font-size: 12px; padding-left: 20px; padding-right: 20px; padding-top: 20px;">Don't have an account? <a href="{% url 'register' %}">Signup</a></p>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+/* Body  */
+.gallery-body h3{
+    padding-top: 40px;
+    color: #FF6500;
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.gallery-body .column {
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+}
+/* Style the images inside the grid */
+.gallery-body .column img {
+    cursor: pointer; 
+    width: fit-content;
+    width:100%; 
+    height: auto;
+    vertical-align: middle;
+}
+.g-img:hover {
+    /* border:2px solid white;  
+    box-shadow: 0 0 10px #333;  
+
+     */
+    transform: scale(1.1,1.1);
+    box-shadow: 0 0 10px #333;
+    -webkit-box-shadow: 0 0 10px #333;  
+    -moz-box-shadow: 0 0 10px #333;  
+    -o-box-shadow: 0 0 10px #333;  
+    -ms-box-shadow: 0 0 10px #333;
+    border-radius: 5%;
+
+}
+
+/* Clear floats after the columns */
+.gallery-body .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.gallery-body .container {
+    position: relative;
+    display: none;
+    margin: 0 auto;
+}
+
+/* Expanding image text */
+.gallery-body .imgtext {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+}
+
+/* Desktop View */
+@media (max-width: 1399.98px) {
+    .gallery-body .column {
+        padding: 10px;
+    }
+}
+
+/* Laptop View  */
+@media (max-width: 1199.98px) {
+    .gallery-body .column {
+        padding: 10px;
+    }
+}
+
+/* Tablet View  */
+@media (max-width: 991.98px) {
+    .gallery-body .column {
+        padding: 4px;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 575.98px) {
+    .gallery-body .column {
+        padding: 4px;
+    }
+    .gallery-body .column figcaption{
+        font-size: 10px;
+    }
+
+    figcaption{
+        font-size: 10px;
+    }
+}
