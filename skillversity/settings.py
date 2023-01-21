@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'skillversity.wsgi.application'
 
 DATABASES = {  
     'default': {  
-        'ENGINE': str(os.getenv('ENGINE')),  
-        'NAME': str(os.getenv('NAME')),  
-        'USER':str(os.getenv('USER')),  
-        'PASSWORD':str(os.getenv('PASSWORD')),  
-        'HOST':str(os.getenv('HOST')),  
-        'PORT':str(os.getenv('PORT'))  
+        'ENGINE': 'django.db.backends.postgresql',  
+        'NAME': 'sversity',  
+        'USER': 'postgres',  
+        'PASSWORD': 'ApcoW0001',  
+        'HOST': 'db-sversity.c66eam8fjckg.ap-south-1.rds.amazonaws.com',  
+        'PORT': 5432 
     }  
 } 
 
