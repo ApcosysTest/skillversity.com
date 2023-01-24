@@ -820,7 +820,7 @@
     color: white;
 }
 @media(max-width:1200px){
-    body{
+    *{
         zoom: 125%;
     }
 }
