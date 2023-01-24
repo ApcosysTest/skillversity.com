@@ -143,10 +143,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Base url to serve media files  
-MEDIA_URL = 'media/'  
+MEDIA_URL = '/media/'  
   
 # Path where media is stored  
-MEDIA_ROOT = BASE_DIR / 'skillversity.com'
+MEDIA_ROOT = 'home/ubuntu/skillversity.com/media/'
 
 # Send Email 
 EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND')) 
