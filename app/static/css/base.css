@@ -361,12 +361,18 @@ footer .footer-brand:hover{
     .footer{
         padding-top: 80px;
     }
+    
 }
 
 /* Tablet View  */
 @media (max-width: 991.98px) {
     .footer{
         padding-top: 80px;
+    }
+}
+@media (max-width: 1399px) {
+    *{
+        zoom:110%;
     }
 }
 
