@@ -370,11 +370,6 @@ footer .footer-brand:hover{
         padding-top: 80px;
     }
 }
-@media (min-width: 1399px) {
-    *{
-        transform:scale(1);
-    }
-}
 
 /* Mobile View  */
 @media (max-width: 575.98px) {
