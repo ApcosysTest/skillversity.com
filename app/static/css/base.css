@@ -370,7 +370,7 @@ footer .footer-brand:hover{
         padding-top: 80px;
     }
 }
-@media (max-width: 1399px) {
+@media (min-width: 1399px) {
     *{
         zoom:110%;
     }
