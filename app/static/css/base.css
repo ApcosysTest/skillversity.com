@@ -355,6 +355,10 @@ footer .footer-brand:hover{
 
 /* Laptop View  */
 @media (max-width: 1199.98px) {
+    .body {
+        zoom:125%;
+    }
+    
     .footer{
         padding-top: 80px;
     }
@@ -362,6 +366,10 @@ footer .footer-brand:hover{
 
 /* Tablet View  */
 @media (max-width: 991.98px) {
+    .body {
+        zoom:125%;
+    }
+    
     .footer{
         padding-top: 80px;
     }
