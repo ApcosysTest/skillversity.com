@@ -819,8 +819,3 @@
 .subscribe-text .btn:focus{
     color: white;
 }
-@media(max-width:1200px){
-    *{
-        zoom: 125%;
-    }
-}
