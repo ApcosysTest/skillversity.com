@@ -19,28 +19,26 @@ class Register(models.Model):
         return self.user.username
 
 class Contact(models.Model):  
-    Name = models.CharField(max_length=20)  
-    Email = models.EmailField(unique=True)  
-    Contact = models.CharField(max_length=15, unique=True)  
+    name = models.CharField(max_length=20)  
+    email = models.EmailField(unique=True)  
+    contact = models.CharField(max_length=15, unique=True)  
     textarea = models.CharField(max_length=500)   
-    class Meta:  
-        db_table = "contactus"
         
     def __str__(self):
         return self.name
 
 class Investor(models.Model):  
-    Name = models.CharField(max_length=20)  
-    Email = models.EmailField()  
-    Contact = models.CharField(max_length=10)
+    name = models.CharField(max_length=20)  
+    email = models.EmailField()  
+    contact = models.CharField(max_length=10)
         
     def __str__(self):
         return self.name
 
 class Instructor(models.Model):  
-    Name = models.CharField(max_length=20)  
-    Email = models.EmailField()  
-    Contact = models.CharField(max_length=15) 
+    name = models.CharField(max_length=20)  
+    email = models.EmailField()  
+    contact = models.CharField(max_length=15) 
     textarea = models.CharField(max_length=500)  
         
     def __str__(self):
