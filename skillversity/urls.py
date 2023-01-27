@@ -23,4 +23,9 @@ urlpatterns = [
     path('', include('app.urls')),
 ] 
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+elif getattr(settings, 'FORCE_SERVE_STATIC', False):
+    settings.DEBUG = True
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    settings.DEBUG = False
