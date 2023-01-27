@@ -162,6 +162,9 @@ def instructor(request):
             Email = form.cleaned_data.get('Email')
             Contact = form.cleaned_data.get('Contact')
             textarea = form.cleaned_data.get('textarea')
+            
+            data = form.save()
+            data.save()
 
             send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
            
