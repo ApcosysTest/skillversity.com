@@ -163,7 +163,7 @@ def instructor(request):
             Contact = form.cleaned_data.get('Contact')
             textarea = form.cleaned_data.get('textarea')
 
-            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreplay.sversity@gmail.com', ['noreplay.sversity@gmail.com'],fail_silently=False)
+            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
            
             messages.success(request, "Mail Sent .." )
             return redirect ("/instructor")
@@ -193,7 +193,7 @@ def contact(request):
             Email = form.cleaned_data.get('Email')
             Contact = form.cleaned_data.get('Contact')
             textarea = form.cleaned_data.get('textarea')
-            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreplay.sversity@gmail.com', ['noreplay.sversity@gmail.com'],fail_silently=False)
+            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
             messages.success(request, "Mail Sent .." )
             return redirect ("contactSuccess")
         
@@ -239,7 +239,7 @@ def investor(request):
             Email = form.cleaned_data.get('Email')
             Contact = form.cleaned_data.get('Contact')
 
-            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}','noreplay.sversity@gmail.com', ['noreplay.sversity@gmail.com'],fail_silently=False)
+            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
             messages.success(request, "Mail Sent .." )
             return redirect ("/investor")
         
