@@ -33,8 +33,6 @@ class Investor(models.Model):
     Name = models.CharField(max_length=20)  
     Email = models.EmailField()  
     Contact = models.CharField(max_length=10)
-    class Meta:  
-        db_table = "investors"
         
     def __str__(self):
         return self.name
@@ -44,8 +42,6 @@ class Instructor(models.Model):
     Email = models.EmailField()  
     Contact = models.CharField(max_length=15) 
     textarea = models.CharField(max_length=500)  
-    class Meta:  
-        db_table = "instructor" 
         
     def __str__(self):
         return self.name
