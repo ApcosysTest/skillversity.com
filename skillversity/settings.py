@@ -147,12 +147,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL = '/media/'
 
-'OPTIONS' : {
-    'context_processors': [
-        'django.template.context.processors.media',
-    ]
-}
-
 # Send Email 
 EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND')) 
 EMAIL_HOST = str(os.getenv('EMAIL_HOST')) 
