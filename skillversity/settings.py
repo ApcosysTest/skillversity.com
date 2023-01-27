@@ -145,7 +145,7 @@ STORAGES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AWS config
-MEDIA_URL = 'media'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = '/home/ubuntu/skillversity.com/media/'
 
 # Send Email 
