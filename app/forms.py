@@ -49,12 +49,12 @@ class ForgotpassForm(forms.Form):
 
 class ContactusForm(forms.ModelForm):
     class Meta:  
-        model = Contactus  
+        model = Contact 
         fields = "__all__"  
 
 class InvestorsForm(forms.ModelForm):  
     class Meta:  
-        model = Investors  
+        model = Investor 
         fields = "__all__" 
 
 class InstructorForm(forms.ModelForm):  
