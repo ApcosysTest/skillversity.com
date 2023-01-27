@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'django_cleanup',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -144,9 +143,8 @@ STORAGES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AWS config
-MEDIA_URL = 'media/'
 MEDIA_ROOT = '/home/ubuntu/skillversity.com/media/'
+MEDIA_URL = 'media/'
 
 # Send Email 
 EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND')) 
