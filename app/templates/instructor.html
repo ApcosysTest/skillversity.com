@@ -47,7 +47,7 @@
                 <p>Develop your skills, broaden your professional network.</p>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-7 instructor-input">
-                <form method = "POST" action="/instructor">
+                <form method = "POST">
                     {% csrf_token %}
                     <div class="input">
                         <input type="text" placeholder="Your Name"  id="Name" name="Name" required>
