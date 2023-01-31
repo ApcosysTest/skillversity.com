@@ -173,7 +173,7 @@ def instructor(request):
         
         else:
             messages.success(request, "Mail Not Sent .." )
-            return render(request,"index.html")
+            return render(request,"instructor.html")
           
     else:  
         form = InstructorForm()  
