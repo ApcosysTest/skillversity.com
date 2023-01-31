@@ -158,9 +158,9 @@ def instructor(request):
             
             # --------------------------------------contact us ---------------------------------------
             subject = "Instructor Inquiry" 
-            Name = form.cleaned_data.get('Name')
-            Email = form.cleaned_data.get('Email')
-            Contact = form.cleaned_data.get('Contact')
+            Name = form.cleaned_data.get('name')
+            Email = form.cleaned_data.get('email')
+            Contact = form.cleaned_data.get('contact')
             textarea = form.cleaned_data.get('textarea')
             
             data = form.save()
@@ -192,9 +192,9 @@ def contact(request):
         form = ContactusForm(request.POST)  
         if form.is_valid():
             subject = "Website Inquiry" 
-            Name = form.cleaned_data.get('Name')
-            Email = form.cleaned_data.get('Email')
-            Contact = form.cleaned_data.get('Contact')
+            Name = form.cleaned_data.get('name')
+            Email = form.cleaned_data.get('email')
+            Contact = form.cleaned_data.get('contact')
             textarea = form.cleaned_data.get('textarea')
             send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
             data = form.save()
@@ -240,9 +240,9 @@ def investor(request):
             
             # --------------------------------------contact us ---------------------------------------
             subject = "Inverstors Inquiry" 
-            Name = form.cleaned_data.get('Name')
-            Email = form.cleaned_data.get('Email')
-            Contact = form.cleaned_data.get('Contact')
+            Name = form.cleaned_data.get('name')
+            Email = form.cleaned_data.get('email')
+            Contact = form.cleaned_data.get('contact')
             
             data = form.save()
             data.save()
