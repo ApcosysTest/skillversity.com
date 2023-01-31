@@ -169,7 +169,7 @@ def instructor(request):
             send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
            
             messages.success(request, "Mail Sent .." )
-            return redirect ("/instructor")
+            return redirect ("instructor")
         
         else:
             messages.success(request, "Mail Not Sent .." )
