@@ -353,7 +353,7 @@ footer .footer-brand:hover{
 }
 
 /* Desktop View */
-@media (max-width: 1399.98px) {
+@media (max-width: 1500px) {
     .body{
         zoom:120%;
     }
