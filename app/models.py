@@ -83,6 +83,7 @@ class Course(models.Model):
     medium = models.CharField(max_length=50)
     image = models.ImageField(upload_to='course_img')
     standalone = models.CharField(choices = CHOICES, max_length=20)
+    free = models.CharField(choices = CHOICES, max_length=20)
     bundle = models.ForeignKey(Bundle, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 

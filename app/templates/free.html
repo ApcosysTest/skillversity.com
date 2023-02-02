@@ -23,7 +23,7 @@
 
 <div class="container coursedetail" style="padding: 25px 40px;">
     <div class="row">
-        <h3>Beginner Level Courses</h3>
+        <h3>Free Courses</h3>
     </div>
 </div>
 <div class="container table" id="table">
@@ -33,22 +33,22 @@
                 <table id="tableFilter" class="tableFilter table-striped sticky-header" style="width: 100%;border: 1px solid;  border-color: rgb(230, 230, 230);">
 
                     <tbody id="silver">
-                        {% for s in stand %}
+                        {% for f in free %}
                         <tr>
                             <td>
                                 <div class="card" style="width: 100%; z-index: -1;">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <img class="card-img-top" src="{{ s.image.url }}" alt="Card image cap">
+                                            <img class="card-img-top" src="{{ f.image.url }}" alt="Card image cap">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
-                                                <h5 class="card-title" style="color:#FF6500;">{{ s.name }}</h5>
-                                                <p class="card-text">{{ s.description }}</p>
+                                                <h5 class="card-title" style="color:#FF6500;">{{ f.name }}</h5>
+                                                <p class="card-text">{{ f.description }}</p>
                                                 <div style="display:flex; justify-content: space-between; color:black;" class="list">
-                                                    <h5><span class="material-symbols-outlined">currency_rupee</span><strong style="font-weight:600; font-size:20px; color:#FF6500;">{{s.price}}</strong></h5>
-                                                    <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{s.language}}</strong></h5>
-                                                    <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{s.medium}}</strong></h5>
+                                                    <h5><span class="material-symbols-outlined">currency_rupee</span><strong style="font-weight:600; font-size:20px; color:#FF6500;"><del>{{f.price}}</del> Free</strong></h5>
+                                                    <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{f.language}}</strong></h5>
+                                                    <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{f.medium}}</strong></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -69,45 +69,4 @@
         </a>
     </div>
 </div>
-</div>
-
-<script>
-    function myFunction1() {
-        var x = document.getElementById("silver");
-        var y = document.getElementById("gold");
-        var btnx = document.getElementById("silverList")
-        var btny = document.getElementById("goldList")
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            y.style.display = "none";
-            btnx.classList.add("btn-style");
-            btny.classList.remove("btn-style");
-        } 
-        else {
-            x.style.display = "block";
-            y.style.display = "none";
-            btnx.classList.add("btn-style");
-            btny.classList.remove("btn-style");
-        }
-    }
-    
-    function myFunction2() {
-        var x = document.getElementById("silver");
-        var y = document.getElementById("gold");
-        var btnx = document.getElementById("silverList")
-        var btny = document.getElementById("goldList")
-        if (x.style.display === "block") {
-            x.style.display = "none";
-            y.style.display = "block";
-            btnx.classList.remove("btn-style");
-            btny.classList.add("btn-style");
-        } 
-        else {
-            x.style.display = "none";
-            y.style.display = "block";
-            btnx.classList.remove("btn-style");
-            btny.classList.add("btn-style");
-        }
-    }
-</script>
 {% endblock %}

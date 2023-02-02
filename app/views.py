@@ -225,10 +225,17 @@ def courseDetail(request, id):
 
 def standAlone(request):
     bundle = Bundle.objects.all()
-    stand = Course.objects.filter( standalone='Yes').order_by('name')
+    stand = Course.objects.filter( standalone='Yes', free='No').order_by('name')
 
-    context = {'bundle':bundle, 'stand':stand,}
+    context = {'bundle':bundle, 'stand':stand}
     return render(request, 'standAlone.html', context)
+
+def freeCourse(request):
+    bundle = Bundle.objects.all()
+    free = Course.objects.filter(free='Yes').order_by('name')
+
+    context = {'bundle':bundle, 'free':free}
+    return render(request, 'free.html', context)
 
 # Investor Page 
 def investor(request):

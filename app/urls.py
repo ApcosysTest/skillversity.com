@@ -13,6 +13,7 @@ urlpatterns = [
     path('contactSuccess', contactSuccess, name='contactSuccess'),
     re_path(r'^courseDetail/(?P<id>[0-9]+)', courseDetail, name='courseDetail'),
     path('standAlone', standAlone, name='standAlone'),
+    path('freeCourse', freeCourse, name='freeCourse'),
     path('investor', investor, name='investor'),
     path('logout',LogoutView.as_view(next_page='/'),name='logout'),
     path('forgotPassword', forgotPassword, name='forgotPassword'),
