@@ -49,7 +49,7 @@
 }
 
 /* Desktop View */
-@media (max-width: 1399.98px) {
+@media (max-width: 1500px) {
     .hero-text {
         width: 400px;
         top: 35%;
