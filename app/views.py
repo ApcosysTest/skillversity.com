@@ -225,10 +225,9 @@ def courseDetail(request, id):
 
 def standAlone(request):
     bundle = Bundle.objects.all()
-    silver = Course.objects.filter(category__name='Silver', standalone='Yes').order_by('name')
-    gold = Course.objects.filter(category__name='Gold', standalone='Yes').order_by('name')
+    stand = Course.objects.filter( standalone='Yes').order_by('name')
 
-    context = {'bundle':bundle, 'silver':silver, 'gold':gold}
+    context = {'bundle':bundle, 'stand':stand,}
     return render(request, 'standAlone.html', context)
 
 # Investor Page 

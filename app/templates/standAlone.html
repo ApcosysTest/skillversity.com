@@ -23,7 +23,7 @@
 
 <div class="container coursedetail" style="padding: 25px 40px;">
     <div class="row">
-        <h3>Standalone Courses</h3>
+        <h3>Beginner Level Courses</h3>
     </div>
 </div>
 <div class="container table" id="table">
@@ -31,15 +31,9 @@
         <div class="col-md-12 column">
             <div class="table-responsive-lg" style="overflow-x: hidden; height: 500px; padding-top: 0;">
                 <table id="tableFilter" class="tableFilter table-striped sticky-header" style="width: 100%;border: 1px solid;  border-color: rgb(230, 230, 230);">
-                    <thead class="tableHeader" style="text-align: center;  background-color: rgb(240, 250, 250);">
-                        <th class="button">
-                            <button type="button" id="silverList" onclick="myFunction1()" class="btn btn-outline silver btn-style" >Silver</button>
-                            <button  type="button" id="goldList" onclick="myFunction2()" class=" btn btn-outline gold " >Gold</button>
-                        </th>
-                    </thead>
 
                     <tbody id="silver">
-                        {% for s in silver %}
+                        {% for s in stand %}
                         <tr>
                             <td>
                                 <div class="card" style="width: 100%; z-index: -1;">
@@ -55,33 +49,6 @@
                                                     <h5><span class="material-symbols-outlined">currency_rupee</span><strong style="font-weight:400; font-size:20px; color:#FF6500;">{{s.price}}</strong></h5>
                                                     <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{s.language}}</strong></h5>
                                                     <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{s.medium}}</strong></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-
-                    <tbody id="gold" style="display:none;">
-                        {% for g in gold %}
-                        <tr>
-                            <td>
-                                <div class="card" style="width: 100%; z-index: -1;">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <img class="card-img-top" src="{{ g.image.url }}" alt="Card image cap">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{ g.name }}</h5>
-                                                <p class="card-text">{{ g.description }}</p>
-                                                <div style="display:flex; justify-content: space-between; color:black;" class="list">
-                                                    <h5><span class="material-symbols-outlined">currency_rupee</span><strong style="font-weight:400; font-size:20px; color:#FF6500;">{{g.price}}</strong></h5>
-                                                    <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{g.language}}</strong></h5>
-                                                    <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{g.medium}}</strong></h5>
                                                 </div>
                                             </div>
                                         </div>
