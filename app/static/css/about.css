@@ -21,7 +21,7 @@
 }
 
 /* Desktop View */
-@media (max-width: 1399.98px) {
+@media (max-width: 1500px) {
     .about-body .img{
         height: 500px;
     }
