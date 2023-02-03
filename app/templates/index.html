@@ -60,7 +60,7 @@
                     <div class="col-sm-6 col-md-7 col-lg-9 course-text">
                         <h3>{{ b.name }}</h3>
                         <p>{{ b.description }}</p>
-                        <a class="btn default">Get More Details</a>
+                        <a class="btn default" href="{% url 'courseDetail' b.id %}">Get More Details</a>
                     </div>
                 </div>
                 {% endfor %}
