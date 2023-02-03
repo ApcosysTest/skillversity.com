@@ -106,6 +106,10 @@ nav{
     border-radius: 2px !important;
 }
 
+.sub-down-top:hover sub-down{
+    display: block;
+}
+
 .sub-down{
     margin-top: 0px !important;
     margin-right: 0px !important;
