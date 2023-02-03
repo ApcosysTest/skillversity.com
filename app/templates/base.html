@@ -109,7 +109,7 @@
 
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link {% block acourse %}{% endblock %} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <a class="nav-link {% block acourse %}{% endblock %} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-clo0se="outside" aria-expanded="false">
                             Courses
                         </a>
                         
@@ -133,7 +133,7 @@
                     {% if request.user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="display: flex; padding-top: 4px;">
-                            <span class="material-symbols-outlined" style='font-size: 28px !important;'>account_circle</span><p style="margin-bottom: 0px; display: grid; align-content: center;">{{ user.register.name }}</p>
+                            <span class="material-symbols-outlined" style='font-size: 28px !important; padding-right: 6px;'>account_circle</span><p style="margin-bottom: 0px; display: grid; align-content: center;">{{ user.register.name }}</p>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="{% url 'changePassword' %}">Change Password</a></li>
