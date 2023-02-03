@@ -106,7 +106,7 @@ nav{
     border-radius: 2px !important;
 }
 
-.sub-down-top:hover sub-down{
+.sub-down-top:hover .sub-down{
     display: block;
 }
 
