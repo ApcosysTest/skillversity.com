@@ -114,6 +114,7 @@ nav{
     margin-top: 0px !important;
     margin-right: 0px !important;
     margin-left: 0px !important;
+    display: none !important;
 }
 
 /* Modal for get app  */
