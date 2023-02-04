@@ -112,6 +112,13 @@ nav{
     margin-left: 0px !important;
 }
 
+.navbar-nav li:hover>.sub-down {
+    display: block;
+    top: 0;
+    right: auto;
+    left: 100%;
+}
+
 /* Modal for get app  */
 .body-modal{
     padding-top: 80px;
