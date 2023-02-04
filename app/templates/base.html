@@ -115,7 +115,7 @@
                         
                         <ul class="dropdown-menu dropend dropdown-menu-end">
                             <li>
-                                <a class="dropdown-item" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#">Professional Courses<ion-icon name="caret-down-sharp"></ion-icon></a>
+                                <a class="dropdown-item" data-bs-toggle="dropdown" aria-expanded="false" href="#">Professional Courses<ion-icon name="caret-down-sharp"></ion-icon></a>
                                 <ul class="dropdown-menu sub-down">
                                     {% for b in bundle %}
                                         <li><a class="dropdown-item" href="{% url 'courseDetail' b.id %}">{{ b.name }}</a></li>
