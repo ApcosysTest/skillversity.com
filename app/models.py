@@ -56,7 +56,8 @@ class Bundle(models.Model):
     type = models.CharField(max_length=100)
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=1000)
-    price = models.IntegerField()
+    silver_price = models.IntegerField()
+    gold_price = models.IntegerField()
     image = models.ImageField(upload_to='bundle_img')
 
     def __str__(self):
@@ -78,8 +79,7 @@ class Course(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=1000)
-    silver_price = models.IntegerField()
-    gold_price = models.IntegerField()
+    price = models.IntegerField()
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     medium = models.CharField(max_length=50)
     image = models.ImageField(upload_to='course_img')
