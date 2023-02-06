@@ -129,11 +129,15 @@
 
                     </li>
                     
-                    <li class="nav-item">
-                        <a class="nav-link {% block ainvestor %}{% endblock %}" href="{% url 'investor' %}">Become Investor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block ainstructor %}{% endblock %}" href="{% url 'instructor' %}">Become Instructor</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {% block apartner %}{% endblock %} dropdown-toggle" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            Be a partner
+                        </a>
+                        
+                        <ul class="dropdown-menu dropend dropdown-menu-end">
+                            <p style="cursor: pointer;"><a class="text-white" href="{% url 'investor' %}">Become an Investor</a></p>
+                            <p style="cursor: pointer;"><a class="text-white" href="{% url 'instructor' %}">Be an Instructor</a></p>
+                        </ul>
                     </li>
 
 
