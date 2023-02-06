@@ -59,9 +59,13 @@
 }
 
 /* Desktop View */
-@media (max-width: 1399.98px) {
+@media (max-width: 1500px) {
     .gallery-body .column {
         padding: 10px;
+    }
+    
+    .gallery-img{
+        width:75%;
     }
 }
 
@@ -70,12 +74,20 @@
     .gallery-body .column {
         padding: 10px;
     }
+    
+    .gallery-img{
+        width:85%;
+    }
 }
 
 /* Tablet View  */
 @media (max-width: 991.98px) {
     .gallery-body .column {
         padding: 4px;
+    }
+    
+    .gallery-img{
+        width:100%;
     }
 }
 
@@ -86,6 +98,10 @@
     }
     .gallery-body .column figcaption{
         font-size: 10px;
+    }
+    
+    .gallery-img{
+        width:100%;
     }
 
     figcaption{
