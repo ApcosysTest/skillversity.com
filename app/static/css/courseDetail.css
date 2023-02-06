@@ -112,7 +112,7 @@
 thead {
     position: sticky;
     padding: 8px 16px;
-    top: 0;
+    top: -1px;
     margin-top:0;
     background-color: #fff;
 }
