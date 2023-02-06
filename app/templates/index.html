@@ -99,11 +99,13 @@
 
     <!-- Become an Instructor -->
     <div class="container b-instructor" style="padding-top: 24px;">
-        <div class="instructor">
-            <div class="instructor-text">
-                <h3>Become an Instructor</h3>
+        <a style="text-decoration:none;" href="{% url 'instructor' %}">
+            <div class="instructor">
+                <div class="instructor-text">
+                    <h3>Become an Instructor</h3>
+                </div>
             </div>
-        </div>
+        </a>
         <div class="p-instructor">
             <p>Join us to Teach the millions of students on sversity through out the word teach what you want in the way you want.</p>
             <center><a class="btn default" href="{% url 'instructor' %}">Start Teaching Today</a></center>
@@ -112,12 +114,14 @@
 
     <!-- Start Invest Our Skillversity -->
     <div class="container-fluid invest">
-        <div class="invester">
-            <div class="invester-text" style="display: flex; justify-content: center;">
-                <a style="text-decoration:none" href="{% url 'investor' %}"><h3>Start Investing in Sversity</h3></a>
-                <a href="{% url 'investor' %}"><ion-icon name="chevron-forward-circle-outline"></ion-icon></a>
+        <a style="text-decoration:none;" href="{% url 'investor' %}">
+            <div class="invester">
+                <div class="invester-text" style="display: flex; justify-content: center;">
+                    <a style="text-decoration:none" href="{% url 'investor' %}"><h3>Start Investing in Sversity</h3></a>
+                    <a href="{% url 'investor' %}"><ion-icon name="chevron-forward-circle-outline"></ion-icon></a>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 
 {% endblock %}
