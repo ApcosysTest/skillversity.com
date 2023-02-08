@@ -216,11 +216,17 @@ def contactSuccess(request):
 
 # Course Detail Page 
 def courseDetail(request, id):
+    silver_sum = 0
+    gold_sum = 0
     bundle = Bundle.objects.all()
     bundle_head = Bundle.objects.get(id=id)
     silver = Course.objects.filter(category__name='Silver',bundle_id=id).order_by('name')
+    for i in silver:
+        silver_sum = silver_sum + i.price
     gold = Course.objects.filter(category__name='Gold',bundle_id=id).order_by('name')
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold}
+    for i in gold:
+        gold_sum = gold_sum + i.price
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum}
     return render(request, 'courseDetail.html', context)
 
 def standAlone(request):
