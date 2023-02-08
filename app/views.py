@@ -226,6 +226,7 @@ def courseDetail(request, id):
     gold = Course.objects.filter(category__name='Gold',bundle_id=id).order_by('name')
     for i in gold:
         gold_sum = gold_sum + i.price
+    gold_sum = gold_sum + silver_sum
     context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum}
     return render(request, 'courseDetail.html', context)
 
