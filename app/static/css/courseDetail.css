@@ -16,6 +16,59 @@
     margin-bottom: 15px;
 }
 
+.name-title{
+    text-align: left !important;
+}
+
+.top-title{
+    height: 50px;
+}
+
+.top-title h1{
+    font-size: 22px;
+    text-align: center;
+    padding-top: 10px;
+    color: #FF6500;
+}
+
+#accordion .card-header{
+    background-color: #fff;
+}
+
+#accordion .card-link {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    width: 100% !important;
+    height: 50px;
+    border: none;
+    text-align: center;
+    outline: none;
+    transition: 0.4s;
+}
+
+#accordion .card-link h5{
+    padding-top: 6px;
+    font-size: 20px;
+}
+
+#accordion .card-link .icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.total-price h1{
+    font-size: 22px;
+    text-align: right;
+    padding-right: 140px;
+}
+
+#silver, #gold{
+    padding: .5rem;
+}
+
 .price{
     color: #787878;
 }
@@ -54,10 +107,56 @@
     background-color: #FF6500 !important;
 }
 
+.card-body button{
+    padding:6px 20px;
+    border-color: #FF6500;
+    color: #FF6500; 
+    border-radius:3px;
+}
+
+.card-body button:active{
+    border-color: #FF6500 !important; 
+    color: #fff !important;
+    background-color: #FF6500 !important; 
+}
+
+.card-body button:hover{
+    border-color: #FF6500 !important;
+    color: #fff !important;
+    background-color: #FF6500 !important;
+}
+
+.card-body button:focus-visible{
+    border-color: #FF6500 !important;
+    color: #fff !important;
+    background-color: #FF6500 !important;
+}
+
 .coursedetail p{
     color: #787878; 
     font-size: larger;  
     font-weight: 400;
+}
+
+@media (max-width: 1500px) {
+    .language-title{
+        display: block;
+    }
+
+    .card-price, .card-lang{
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .language-title{
+        display: none;
+    }
+
+    .col-4 {
+        flex: 0 0 auto !important;
+        width: 60% !important;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -107,26 +206,54 @@
         margin-left: 0px !important;
         text-align: center;
     }
+    
+    .col-4 {
+        flex: 0 0 auto !important;
+        width: 80% !important;
+    }
+
+    .price-title{
+        display: none;
+    }
+
+    .card-price, .card-lang{
+        display: block;
+    }
+
+    .name-title{
+        text-align: center !important;
+    }
+
+    .top-title h1{
+        padding-top: 18px;
+        font-size: 16px;
+    }
+
+    #gold .top-title h1{
+        padding-top: 8px;
+    }
+
+    .card-link h5{
+        font-size: 16px !important;
+    }
+
+    .total-price h1{
+        font-size: 18px;
+        text-align: right !important;
+        padding-right: 10px !important;
+    }
 }
 
-thead {
+.table-btn {
     position: sticky;
     padding: 8px 16px;
     top: -1px;
     margin-top:0;
-    background-color: #fff;
+    background-color: rgb(240, 250, 250);
 }
 
-th .silver, th .gold{
+.table-btn .silver, .table-btn .gold, .table-btn .silver:hover, .table-btn .gold:hover, .table-btn .silver:active, .table-btn .gold:active{
     width: 25%;
-    border-color: #797b7f;
-}
-
-th .silver:hover, th .gold:hover{
-    border-color: #797b7f;
-}
-
-th .silver:active, th .gold:active{
     border-color: #797b7f !important;
 }
 
@@ -140,15 +267,11 @@ th .silver:active, th .gold:active{
     border-color: #FF6500 !important;
 }
 
-th{
+.table-btn{
     padding: 8px 16px;
     top: 0;
     display: flex;
     justify-content: space-evenly;
-}
-
-td{
-    padding: 8px 16px;
 }
 
 .courseImage{
