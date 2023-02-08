@@ -180,18 +180,24 @@
 <script>
     function myFunction1() {
         var x = document.getElementById("silver");
+        var pricex = document.getElementById("silver-price");
         var y = document.getElementById("gold");
-        var btnx = document.getElementById("silverList")
-        var btny = document.getElementById("goldList")
+        var pricey = document.getElementById("gold-price");
+        var btnx = document.getElementById("silverList");
+        var btny = document.getElementById("goldList");
         if (x.style.display === "none") {
-            x.style.display = "block";
+            x.style.display = "contents";
+            pricex.style.display = "contents";
             y.style.display = "none";
+            pricey.style.display = "none";
             btnx.classList.add("btn-style");
             btny.classList.remove("btn-style");
         } 
         else {
-            x.style.display = "block";
+            x.style.display = "contents";
+            pricex.style.display = "contents";
             y.style.display = "none";
+            pricey.style.display = "none";
             btnx.classList.add("btn-style");
             btny.classList.remove("btn-style");
         }
@@ -199,18 +205,24 @@
     
     function myFunction2() {
         var x = document.getElementById("silver");
+        var pricex = document.getElementById("silver-price");
         var y = document.getElementById("gold");
+        var pricey = document.getElementById("gold-price");
         var btnx = document.getElementById("silverList")
         var btny = document.getElementById("goldList")
-        if (x.style.display === "block") {
+        if (x.style.display === "contents") {
             x.style.display = "none";
-            y.style.display = "block";
+            pricex.style.display = "none";
+            y.style.display = "contents";
+            pricey.style.display = "contents";
             btnx.classList.remove("btn-style");
             btny.classList.add("btn-style");
         } 
         else {
             x.style.display = "none";
-            y.style.display = "block";
+            pricex.style.display = "none";
+            y.style.display = "contents";
+            pricey.style.display = "contents";
             btnx.classList.remove("btn-style");
             btny.classList.add("btn-style");
         }
