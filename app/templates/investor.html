@@ -55,8 +55,11 @@
                     <div class="input">
                         <input type="number" placeholder="Mobile Number" id="contact" name="contact" required>
                     </div>
-                    <div class="input" style="padding-bottom: 20px;">
+                    <div class="input">
                         <textarea placeholder='Write your Message' maxlength='500' id="textarea" name="textarea" required></textarea>
+                    </div>
+                    <div class="input" style="padding-bottom: 20px;">
+                        {{form.captcha}}
                     </div>
                     <div>
                         <button class="btn" type="submit">Send Enquiry</button>
