@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, logout, login as auth_login, updat
 from .helper import send_forget_password_mail
 import uuid
 from django.contrib.auth.decorators import login_required, user_passes_test
-import json, urllib
+import json, urllib.request
 from django.conf import settings
 
 # Create your views here.
