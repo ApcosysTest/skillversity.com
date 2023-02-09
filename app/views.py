@@ -256,11 +256,12 @@ def investor(request):
             Name = form.cleaned_data.get('name')
             Email = form.cleaned_data.get('email')
             Contact = form.cleaned_data.get('contact')
+            textarea = form.cleaned_data.get('textarea')
             
             data = form.save()
             data.save()
 
-            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
+            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
             messages.success(request, "Mail Sent .." )
             return redirect ("investor")
         
