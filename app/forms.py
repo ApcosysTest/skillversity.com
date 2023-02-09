@@ -1,8 +1,6 @@
 from django import forms
 from .models import *
 from django.contrib.auth.forms import PasswordChangeForm
-from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV2Checkbox
 
 class RegisterUserForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Username'}), error_messages={'unique':"A user with this username already exists."}, required=True)
@@ -54,8 +52,7 @@ class ContactusForm(forms.ModelForm):
         model = Contact 
         fields = "__all__"  
 
-class InvestorsForm(forms.ModelForm): 
-    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox, required=True) 
+class InvestorsForm(forms.ModelForm):
     class Meta:  
         model = Investor 
         fields = "__all__" 
