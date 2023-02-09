@@ -31,11 +31,11 @@
     color: #FF6500;
 }
 
-#accordion .card-header{
+#accordion .card-header, #accordion1 .card-header{
     background-color: #fff;
 }
 
-#accordion .card-link {
+#accordion .card-link, #accordion1 .card-link {
     background-color: #fff;
     color: #444;
     cursor: pointer;
@@ -47,12 +47,12 @@
     transition: 0.4s;
 }
 
-#accordion .card-link h5{
+#accordion .card-link h5, #accordion1 .card-link h5{
     padding-top: 6px;
     font-size: 20px;
 }
 
-#accordion .card-link .icon{
+#accordion .card-link .icon, #accordion1 .card-link .icon{
     width: 30px;
     height: 30px;
     display: flex;
