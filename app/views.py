@@ -169,7 +169,7 @@ def instructor(request):
             send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
            
             messages.success(request, "Mail Sent .." )
-            form = InstructorForm() 
+            return redirect ("instructor")
         
         else:
             messages.success(request, "Mail Not Sent .." )
@@ -267,7 +267,7 @@ def investor(request):
         
         else:
             messages.success(request, "Mail Not Sent .." )
-            return render(request,"index.html")
+            return redirect ("investor")
           
     else:  
         form = InvestorsForm()  
