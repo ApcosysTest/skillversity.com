@@ -53,6 +53,7 @@ class ContactusForm(forms.ModelForm):
         fields = "__all__"  
 
 class InvestorsForm(forms.ModelForm): 
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox, required=True) 
     class Meta:  
         model = Investor 
         fields = "__all__" 
