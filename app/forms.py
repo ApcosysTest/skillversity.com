@@ -1,6 +1,8 @@
 from django import forms
 from .models import *
 from django.contrib.auth.forms import PasswordChangeForm
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 
 class RegisterUserForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Username'}), error_messages={'unique':"A user with this username already exists."}, required=True)
