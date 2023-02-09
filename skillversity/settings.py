@@ -27,7 +27,7 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'captcha',
     'django_cleanup',
 ]
 
@@ -155,7 +154,3 @@ EMAIL_USE_TLS = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER')) 
 EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD')) 
-
-# ReCaptcha
-RECAPTCHA_PUBLIC_KEY = str(os.getenv('RECAPTCHA_PUBLIC_KEY')) 
-RECAPTCHA_PRIVATE_KEY = str(os.getenv('RECAPTCHA_PUBLIC_KEY')) 
