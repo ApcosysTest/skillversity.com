@@ -193,16 +193,35 @@ def contact(request):
         Email = request.session.get('Email')
         form = ContactusForm(request.POST)  
         if form.is_valid():
-            subject = "Website Inquiry" 
-            Name = form.cleaned_data.get('name')
-            Email = form.cleaned_data.get('email')
-            Contact = form.cleaned_data.get('contact')
-            textarea = form.cleaned_data.get('textarea')
-            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
-            data = form.save()
-            data.save()
-            messages.success(request, "Mail Sent .." )
-            return redirect ("contactSuccess")
+            
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': settings.RECAPTCHA_PRIVATE_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req =  urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            ''' End reCAPTCHA validation '''
+            
+            if result['success']:
+                subject = "Website Inquiry" 
+                Name = form.cleaned_data.get('name')
+                Email = form.cleaned_data.get('email')
+                Contact = form.cleaned_data.get('contact')
+                textarea = form.cleaned_data.get('textarea')
+                send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
+                data = form.save()
+                data.save()
+                messages.success(request, "Mail Sent .." )
+                return redirect ("contactSuccess")
+            
+            else:
+                print(result)
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
         
         else:
             messages.success(request, "Mail Not Sent .." )
