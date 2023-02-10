@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load humanize %}
 
 {% block head %}
 
@@ -46,7 +47,7 @@
                                                 <h5 class="card-title" style="color:#FF6500;">{{ s.name }}</h5>
                                                 <p class="card-text">{{ s.description }}</p>
                                                 <div style="display:flex; justify-content: space-between; color:black;" class="list">
-                                                    <h5><strong style="font-weight:100; font-size:22px; color: #FF6500; font-family: 'Times New Roman', Times, serif;">₹ </strong><strong style="font-weight:600; font-size:20px; color:#FF6500;">{{s.price}}</strong></h5>
+                                                    <h5><strong style="font-weight:100; font-size:22px; color: #FF6500; font-family: 'Times New Roman', Times, serif;">₹ </strong><strong style="font-weight:600; font-size:20px; color:#FF6500;">{{s.price|intcomma}}</strong></h5>
                                                     <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{s.language}}</strong></h5>
                                                     <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{s.medium}}</strong></h5>
                                                     <a type="button" href="#DownloadApp" data-toggle="modal" data-target="#getAppModal">
