@@ -158,20 +158,38 @@ def instructor(request):
         form = InstructorForm(request.POST)  
         if form.is_valid():
             
-            # --------------------------------------contact us ---------------------------------------
-            subject = "Instructor Inquiry" 
-            Name = form.cleaned_data.get('name')
-            Email = form.cleaned_data.get('email')
-            Contact = form.cleaned_data.get('contact')
-            textarea = form.cleaned_data.get('textarea')
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': settings.RECAPTCHA_PRIVATE_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req =  urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            ''' End reCAPTCHA validation '''
             
-            data = form.save()
-            data.save()
+            if result['success']:
+                # --------------------------------------contact us ---------------------------------------
+                subject = "Instructor Inquiry" 
+                Name = form.cleaned_data.get('name')
+                Email = form.cleaned_data.get('email')
+                Contact = form.cleaned_data.get('contact')
+                textarea = form.cleaned_data.get('textarea')
 
-            send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
-           
-            messages.success(request, "Mail Sent .." )
-            return redirect ("instructor")
+                data = form.save()
+                data.save()
+
+                send_mail(subject,f'Name:{Name}\n\nEmail :{Email}\n\nContact:{Contact}\n\ntextarea:{textarea}','noreply@sversity.com', ['noreply@sversity.com'],fail_silently=False)
+
+                messages.success(request, "Mail Sent .." )
+                return redirect ("instructor")
+            
+            else:
+                print(result)
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
         
         else:
             messages.success(request, "Mail Not Sent .." )
