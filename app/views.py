@@ -272,8 +272,9 @@ def courseDetail(request, id):
     else:
         flag = True
         bundle_head = Bundle.objects.get(id=id)
-        bundle_p = (bundle_head.price / 80)
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'bundle_p':bundle_p, 'flag':flag}
+        bundle_sp = (bundle_head.silver_price / 80)
+        bundle_gp = (bundle_head.gold_price / 80)
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag}
     return render(request, 'courseDetail.html', context)
 
 def get_location(request):
