@@ -29,8 +29,13 @@
             <p>{{ bundle_head.description }}</p>
             <div class="row">
                 <div class="col-md-6 price">
-                    <p><strong>Silver Package &nbsp;&nbsp;<strong style="font-weight:100; font-size:22px; font-family: 'Times New Roman', Times, serif;">₹ </strong> {{ bundle_head.silver_price|intcomma }}</strong> </p>
-                    <p><strong>Gold Package &nbsp;&nbsp;<strong style="font-weight:100; font-size:22px; font-family: 'Times New Roman', Times, serif;">₹ </strong> {{ bundle_head.gold_price|intcomma }}</strong> </p>
+                    {% if flag == 'False' %}
+                        <p><strong>Silver Package &nbsp;&nbsp;<strong style="font-weight:100; font-size:22px; font-family: 'Times New Roman', Times, serif;">₹ </strong> {{ bundle_head.silver_price|intcomma }}</strong> </p>
+                        <p><strong>Gold Package &nbsp;&nbsp;<strong style="font-weight:100; font-size:22px; font-family: 'Times New Roman', Times, serif;">₹ </strong> {{ bundle_head.gold_price|intcomma }}</strong> </p>
+                    {% else %}
+                        <p><strong>Silver Package &nbsp;&nbsp;<strong style="font-weight:100; font-size:22px; font-family: 'Times New Roman', Times, serif;">USD </strong> {{ bundle_sp|intcomma }}</strong> </p>
+                        <p><strong>Gold Package &nbsp;&nbsp;<strong style="font-weight:100; font-size:22px; font-family: 'Times New Roman', Times, serif;">USD </strong> {{ bundle_gp|intcomma }}</strong> </p>
+                    {% endif %}
                 </div>
                 <div class="col-md-6 down">
                     <a href="#DownloadApp" data-toggle="modal" data-target="#getAppModal">
