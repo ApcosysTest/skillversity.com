@@ -255,6 +255,7 @@ def contactSuccess(request):
 
 # Course Detail Page 
 def courseDetail(request, id):
+    flag = False
     silver_sum = 0
     gold_sum = 0
     bundle_sp = 0
