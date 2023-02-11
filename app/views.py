@@ -266,8 +266,24 @@ def courseDetail(request, id):
     for i in gold:
         gold_sum = gold_sum + i.price
     gold_sum = gold_sum + silver_sum
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum}
+    loc = get_location(request)
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum, 'loc':loc}
     return render(request, 'courseDetail.html', context)
+
+def get_location(request):
+    ip_address = get_client_ip(request)
+    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+    location_data =  response.get("country_name")
+    return location_data
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+       ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+        print(ip)
+    return ip
 
 def standAlone(request):
     bundle = Bundle.objects.all()
