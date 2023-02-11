@@ -266,8 +266,14 @@ def courseDetail(request, id):
     for i in gold:
         gold_sum = gold_sum + i.price
     gold_sum = gold_sum + silver_sum
-    loc = get_location(request)
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum, 'loc':loc}
+    loc=get_location(request)
+    if loc == "India":
+        pass
+    else:
+        flag = True
+        bundle_head = Bundle.objects.get(id=id)
+        bundle_p = (bundle_head.price / 80)
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'bundle_p':bundle_p, 'flag':flag}
     return render(request, 'courseDetail.html', context)
 
 def get_location(request):
