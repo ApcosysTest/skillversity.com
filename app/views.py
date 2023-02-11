@@ -257,6 +257,8 @@ def contactSuccess(request):
 def courseDetail(request, id):
     silver_sum = 0
     gold_sum = 0
+    bundle_sp = 0
+    bundle_gp = 0
     bundle = Bundle.objects.all()
     bundle_head = Bundle.objects.get(id=id)
     silver = Course.objects.filter(category__name='Silver',bundle_id=id).order_by('name')
