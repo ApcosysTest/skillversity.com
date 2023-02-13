@@ -270,7 +270,7 @@ def courseDetail(request, id):
         gold_sum = gold_sum + i.price
     gold_sum = gold_sum + silver_sum
     loc=get_location(request)
-    if loc == "India" or loc == "none":
+    if loc == "India" or loc == "None":
         pass
     else:
         flag = True
