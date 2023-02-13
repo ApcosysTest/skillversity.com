@@ -256,10 +256,7 @@ def contactSuccess(request):
 # Course Detail Page 
 def courseDetail(request, id):
     flag = False
-    silver_sum = 0
-    gold_sum = 0
-    bundle_sp = 0
-    bundle_gp = 0
+    silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp = 0, 0, 0, 0, 0
     bundle = Bundle.objects.all()
     bundle_head = Bundle.objects.get(id=id)
     silver = Course.objects.filter(category__name='Silver',bundle_id=id).order_by('name')
@@ -268,7 +265,7 @@ def courseDetail(request, id):
     gold = Course.objects.filter(category__name='Gold',bundle_id=id).order_by('name')
     for i in gold:
         gold_sum = gold_sum + i.price
-    gold_sum = gold_sum + silver_sum
+    gold_total = gold_sum + silver_sum
     loc=get_location(request)
     if loc == "India" or loc == "None":
         pass
@@ -277,7 +274,7 @@ def courseDetail(request, id):
         bundle_head = Bundle.objects.get(id=id)
         bundle_sp = (bundle_head.silver_price / 80)
         bundle_gp = (bundle_head.gold_price / 80)
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag}
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'gold_total':gold_total,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag}
     return render(request, 'courseDetail.html', context)
 
 def get_location(request):
