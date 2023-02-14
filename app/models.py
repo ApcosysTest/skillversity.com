@@ -93,8 +93,7 @@ class Course(models.Model):
         return self.name
     
 class Currency(models.Model):
-    name = models.CharField(max_length=50)
-    currency = models.ForeignKey(Currency, on_delete=models.CASCADE)
+    currency = models.CharField(max_length=50)
     equivalent_rupee = models.FloatField()
 
     def __str__(self):
