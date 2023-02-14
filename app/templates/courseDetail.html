@@ -127,7 +127,11 @@
                                                 <h5>Language: <span style="color: #FF6500; font-weight:500;">{{g.language}}</span></h5>
                                             </div>
                                             <div class="col-3 price-title">
-                                                <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹{{g.price|intcomma}}</span></h5>
+                                                {% if flag == False %}
+                                                    <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{s.price|intcomma}}</span></h5>
+                                                {% else %}
+                                                    <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">${% for d in dolls %} {% if d.id == s.id %} {{ d.value }} {% endif %} {% endfor %} </span></h5>
+                                                {% endif %}
                                             </div>
                                             <div class="col-1">
                                                 <div class="icon"><i class="bi bi-chevron-down"></i></div>
