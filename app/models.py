@@ -91,3 +91,16 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Currency(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+    
+class Conversation(models.Model):
+    currency = models.ForeignKey(Currency, on_delete=models.CASCADE)
+    equivalent_rupee = models.FloatField()
+
+    def __str__(self):
+        return self.currency.name
