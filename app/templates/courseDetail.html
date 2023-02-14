@@ -181,7 +181,11 @@
             </div>
 
             <div id="silver-price" class="total-price">
-                <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ <del>{{ silver_sum|intcomma }}</del></span></h1>
+                {% if flag == False %}
+                    <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ <del>{{ silver_sum|intcomma }}</del></span></h1>
+                {% else %}
+                    <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ <del>{{ ds_sum }}</del></span></h5>
+                {% endif %}
                 <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ bundle_head.silver_price|intcomma }}</span></h1>
             </div>
 
