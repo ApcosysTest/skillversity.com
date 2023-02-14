@@ -275,7 +275,7 @@ def courseDetail(request, id):
         dollg.append({'id':i.id, 'value':dollprice})
         dg_sum = round(dg_sum + dollprice, 2)
     gold_total = gold_sum + silver_sum
-    dg_total = dg_sum + ds_sum
+    dg_total = round(dg_sum + ds_sum,2)
     loc=get_location(request)
     if loc == "India" or loc == "None":
         pass
