@@ -267,6 +267,7 @@ def courseDetail(request, id):
         silver_sum = silver_sum + i.price
         dollprice = round(i.price / dollar.equivalent_rupee, 2)
         dolls.append({'id':i.id, 'value':dollprice})
+        ds_sum = ds_sum + dollprice
     gold = Course.objects.filter(category__name='Gold',bundle_id=id).order_by('name')
     for i in gold:
         gold_sum = gold_sum + i.price
@@ -280,7 +281,7 @@ def courseDetail(request, id):
         flag = True
         bundle_sp = round(bundle_head.silver_price / dollar.equivalent_rupee, 2)
         bundle_gp = round(bundle_head.gold_price / dollar.equivalent_rupee, 2)
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'gold_total':gold_total,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag, 'dolls':dolls, 'dollg':dollg}
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'gold_total':gold_total,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag, 'dolls':dolls, 'dollg':dollg, 'ds_sum':ds_sum}
     return render(request, 'courseDetail.html', context)
 
 def get_location(request):
