@@ -256,7 +256,7 @@ def contactSuccess(request):
 # Course Detail Page 
 def courseDetail(request, id):
     flag = False
-    silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp, ds_sum = 0, 0, 0, 0, 0, 0
+    silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp, ds_sum, dg_sum, dg_total = 0, 0, 0, 0, 0, 0, 0, 0
     dolls=[]
     dollg=[]
     bundle = Bundle.objects.all()
@@ -267,13 +267,15 @@ def courseDetail(request, id):
         silver_sum = silver_sum + i.price
         dollprice = round(i.price / dollar.equivalent_rupee, 2)
         dolls.append({'id':i.id, 'value':dollprice})
-        ds_sum = ds_sum + dollprice
+        ds_sum = round(ds_sum + dollprice,2)
     gold = Course.objects.filter(category__name='Gold',bundle_id=id).order_by('name')
     for i in gold:
         gold_sum = gold_sum + i.price
         dollprice = round(i.price / dollar.equivalent_rupee, 2)
         dollg.append({'id':i.id, 'value':dollprice})
+        dg_sum = round(dg_sum + dollprice, 2)
     gold_total = gold_sum + silver_sum
+    dg_total = dg_sum + ds_sum
     loc=get_location(request)
     if loc == "India" or loc == "None":
         pass
