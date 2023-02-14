@@ -256,7 +256,7 @@ def contactSuccess(request):
 # Course Detail Page 
 def courseDetail(request, id):
     flag = False
-    silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp = 0, 0, 0, 0, 0
+    silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp, ds_sum = 0, 0, 0, 0, 0, 0
     dolls=[]
     dollg=[]
     bundle = Bundle.objects.all()
