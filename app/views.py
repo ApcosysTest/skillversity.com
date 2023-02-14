@@ -257,6 +257,7 @@ def contactSuccess(request):
 def courseDetail(request, id):
     flag = False
     silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp = 0, 0, 0, 0, 0
+    dolls=[]
     bundle = Bundle.objects.all()
     bundle_head = Bundle.objects.get(id=id)
     dollar = Currency.objects.get(currency="US Dollar")
