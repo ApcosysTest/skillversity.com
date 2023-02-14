@@ -185,8 +185,8 @@
                     <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ <del>{{ silver_sum|intcomma }}</del></span></h1>
                     <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ bundle_head.silver_price|intcomma }}</span></h1>
                 {% else %}
-                    <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ <del>{{ ds_sum }}</del></span></h5>
-                    <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ bundle_sp }}</span></h1>
+                    <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ <del>{{ dg_sum }}</del></span></h1>
+                    <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ {{ bundle_sp }}</span></h1>
                 {% endif %}
             </div>
 
@@ -196,9 +196,9 @@
                     <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ <del>{{ gold_total|intcomma }}</del></span></h1>
                     <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ bundle_head.gold_price|intcomma }}</span></h1>
                 {% else %}
-                    <h1>Gold Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ dg_sum }}</span><span style="font-size:14px;">(Silver)</span> + <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ gold_sum|intcomma }}</span></h1>
-                    <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ <del>{{ dg_total }}</del></span></h1>
-                    <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ bundle_gp }}</span></h1>
+                    <h1>Gold Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ {{ dg_sum }}</span><span style="font-size:14px;">(Silver)</span> + <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{ gold_sum|intcomma }}</span></h1>
+                    <h1>Total Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ <del>{{ dg_total }}</del></span></h1>
+                    <h1>Offer Price: <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">$ {{ bundle_gp }}</span></h1>
                 {% endif %}
             </div>
 
