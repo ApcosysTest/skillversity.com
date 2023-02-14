@@ -274,8 +274,8 @@ def courseDetail(request, id):
         dollar = Currency.objects.get(name="Dollar")
         curr = Conversation.objects.get(currency=dollar.id)
         bundle_head = Bundle.objects.get(id=id)
-        bundle_sp = int(bundle_head.silver_price / curr.equivalent_rupee)
-        bundle_gp = int(bundle_head.gold_price / curr.equivalent_rupee)
+        bundle_sp = round(bundle_head.silver_price / curr.equivalent_rupee, 2)
+        bundle_gp = round(bundle_head.gold_price / curr.equivalent_rupee, 2)
     context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'gold_total':gold_total,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag}
     return render(request, 'courseDetail.html', context)
 
