@@ -258,6 +258,7 @@ def courseDetail(request, id):
     flag = False
     silver_sum, gold_sum, gold_total, bundle_sp,bundle_gp = 0, 0, 0, 0, 0
     dolls=[]
+    dollg=[]
     bundle = Bundle.objects.all()
     bundle_head = Bundle.objects.get(id=id)
     dollar = Currency.objects.get(currency="US Dollar")
@@ -269,6 +270,8 @@ def courseDetail(request, id):
     gold = Course.objects.filter(category__name='Gold',bundle_id=id).order_by('name')
     for i in gold:
         gold_sum = gold_sum + i.price
+        dollprice = round(i.price / dollar.equivalent_rupee, 2)
+        dollg.append({'id':i.id, 'value':dollprice})
     gold_total = gold_sum + silver_sum
     loc=get_location(request)
     if loc == "India" or loc == "None":
@@ -277,7 +280,7 @@ def courseDetail(request, id):
         flag = True
         bundle_sp = round(bundle_head.silver_price / dollar.equivalent_rupee, 2)
         bundle_gp = round(bundle_head.gold_price / dollar.equivalent_rupee, 2)
-    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'gold_total':gold_total,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag, 'dolls':dolls}
+    context = {'bundle':bundle, 'bundle_head':bundle_head, 'silver':silver, 'gold':gold, 'silver_sum':silver_sum, 'gold_sum':gold_sum,'gold_total':gold_total,'bundle_sp':bundle_sp,'bundle_gp':bundle_gp, 'flag':flag, 'dolls':dolls, 'dollg':dollg}
     return render(request, 'courseDetail.html', context)
 
 def get_location(request):
