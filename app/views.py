@@ -304,14 +304,21 @@ def get_client_ip(request):
 def standAlone(request):
     bundle = Bundle.objects.all()
     stand = Course.objects.filter( standalone='Yes', free='No').order_by('name')
-
-    context = {'bundle':bundle, 'stand':stand}
+    dollar = Currency.objects.get(currency="US Dollar")
+    for s in stand:
+        dollprice = round(s.price / dollar.equivalent_rupee, 2)
+        dolls.append({'id':s.id, 'value':dollprice})
+    loc=get_location(request)
+    if loc == "India" or loc == "None":
+        pass
+    else:
+        flag = True
+    context = {'bundle':bundle, 'stand':stand, 'flag':flag, 'dolls':dolls}
     return render(request, 'standAlone.html', context)
 
 def freeCourse(request):
     bundle = Bundle.objects.all()
     free = Course.objects.filter(free='Yes').order_by('name')
-
     context = {'bundle':bundle, 'free':free}
     return render(request, 'free.html', context)
 
