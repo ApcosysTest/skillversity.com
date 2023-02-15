@@ -47,7 +47,11 @@
                                                 <h5 class="card-title" style="color:#FF6500;">{{ s.name }}</h5>
                                                 <p class="card-text">{{ s.description }}</p>
                                                 <div style="display:flex; justify-content: space-between; color:black;" class="list">
-                                                    <h5><strong style="font-weight:100; font-size:22px; color: #FF6500; font-family: 'Times New Roman', Times, serif;">₹ </strong><strong style="font-weight:600; font-size:20px; color:#FF6500;">{{s.price|intcomma}}</strong></h5>
+                                                    {% if flag == False %}
+                                                        <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{s.price|intcomma}}</span></h5>
+                                                    {% else %}
+                                                        <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">${% for d in dolls %} {% if d.id == s.id %} {{ d.value }} {% endif %} {% endfor %} </span></h5>
+                                                    {% endif %}
                                                     <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{s.language}}</strong></h5>
                                                     <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{s.medium}}</strong></h5>
                                                     <a type="button" href="#DownloadApp" data-toggle="modal" data-target="#getAppModal">
