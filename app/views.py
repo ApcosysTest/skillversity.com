@@ -302,6 +302,8 @@ def get_client_ip(request):
     return ip
 
 def standAlone(request):
+    flag = False
+    dolls = 0
     bundle = Bundle.objects.all()
     stand = Course.objects.filter( standalone='Yes', free='No').order_by('name')
     dollar = Currency.objects.get(currency="US Dollar")
