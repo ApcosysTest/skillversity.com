@@ -48,9 +48,9 @@
                                                 <p class="card-text">{{ f.description }}</p>
                                                 <div style="display:flex; justify-content: space-between; color:black;" class="list">
                                                     {% if flag == False %}
-                                                        <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{s.price|intcomma}}</span></h5>
+                                                        <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">₹ {{f.price|intcomma}}</span></h5>
                                                     {% else %}
-                                                        <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">${% for d in dolls %} {% if d.id == s.id %} {{ d.value }} {% endif %} {% endfor %} </span></h5>
+                                                        <h5>Price <span style="color: #FF6500; font-weight:400; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">${% for d in dolls %} {% if d.id == f.id %} {{ d.value }} {% endif %} {% endfor %} </span></h5>
                                                     {% endif %}
                                                     <h5 style="font-weight:600; font-size:18px;">Language: <strong style="font-weight:400; font-size:18px;">{{f.language}}</strong></h5>
                                                     <h5 style="font-weight:600; font-size:18px;">Medium: <strong style="font-weight:400; font-size:18px;">{{f.medium}}</strong></h5>
