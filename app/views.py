@@ -262,13 +262,13 @@ def courseDetail(request, id):
     bundle = Bundle.objects.all()
     bundle_head = Bundle.objects.get(id=id)
     dollar = Currency.objects.get(currency="US Dollar")
-    silver = Course.objects.filter(category__name='Silver',bundle_id=bundle_head).order_by('name')
+    silver = Course.objects.filter(category__name='Silver',bundle=bundle_head).order_by('name')
     for i in silver:
         silver_sum = silver_sum + i.price
         dollprice = round(i.price / dollar.equivalent_rupee, 2)
         dolls.append({'id':i.id, 'value':dollprice})
         ds_sum = round(ds_sum + dollprice,2)
-    gold = Course.objects.filter(category__name='Gold',bundle_id=bundle_head).order_by('name')
+    gold = Course.objects.filter(category__name='Gold',bundle=bundle_head).order_by('name')
     for i in gold:
         gold_sum = gold_sum + i.price
         dollprice = round(i.price / dollar.equivalent_rupee, 2)
