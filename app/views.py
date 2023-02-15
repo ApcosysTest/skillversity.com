@@ -303,7 +303,7 @@ def get_client_ip(request):
 
 def standAlone(request):
     flag = False
-    dolls = 0
+    dolls = []
     bundle = Bundle.objects.all()
     stand = Course.objects.filter( standalone='Yes', free='No').order_by('name')
     dollar = Currency.objects.get(currency="US Dollar")
