@@ -319,9 +319,20 @@ def standAlone(request):
     return render(request, 'standAlone.html', context)
 
 def freeCourse(request):
+    flag = False
+    dolls = []
     bundle = Bundle.objects.all()
     free = Course.objects.filter(free='Yes').order_by('name')
-    context = {'bundle':bundle, 'free':free}
+    dollar = Currency.objects.get(currency="US Dollar")
+    for f in free:
+        dollprice = round(f.price / dollar.equivalent_rupee, 2)
+        dolls.append({'id':f.id, 'value':dollprice})
+    loc=get_location(request)
+    if loc == "India" or loc == "None":
+        pass
+    else:
+        flag = True
+    context = {'bundle':bundle, 'free':free, 'flag':flag, 'dolls':dolls}
     return render(request, 'free.html', context)
 
 # Investor Page 
