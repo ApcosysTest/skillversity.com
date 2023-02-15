@@ -86,7 +86,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to='course_img')
     standalone = models.CharField(choices = CHOICES, max_length=20)
     free = models.CharField(choices = CHOICES, max_length=20)
-    bundle = models.ForeignKey(Bundle, on_delete=models.CASCADE)
+    bundle = models.ManyToManyField(Bundle, default='Null', blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
