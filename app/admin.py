@@ -5,7 +5,11 @@ from .models import *
 admin.site.register(Register)
 admin.site.register(Bundle)
 admin.site.register(Category)
-admin.site.register(Course)
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    ordering = ['name']
+
 admin.site.register(Language)
 admin.site.register(Contact)
 admin.site.register(Investor)
