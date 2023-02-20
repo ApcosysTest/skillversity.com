@@ -16,6 +16,36 @@
     margin-bottom: 15px;
 }
 
+.coursedetail .inputWithIcon input {
+    width: 75%;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 40px;
+    height: 40px;
+}
+
+.coursedetail input:focus-visible{
+    outline: none;
+}
+
+.coursedetail .inputWithIcon{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inputWithIcon ion-icon {
+    position: absolute;
+    left: 25%;
+    top: 2px;
+    padding: 7px 9px;
+    color: #474747;
+    font-size: 22px;
+}
+
 .name-title{
     text-align: left !important;
 }
@@ -156,6 +186,15 @@
     .col-4 {
         flex: 0 0 auto !important;
         width: 60% !important;
+    }
+    
+    .coursedetail .inputWithIcon input{
+        width: 100%;
+        height: 40px;
+    }
+
+    .inputWithIcon ion-icon {
+        left: 0;
     }
 }
 
