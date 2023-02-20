@@ -203,6 +203,11 @@
         font-family: 'Poppins';
         font-size: 18px;
     }
+    
+    .coursedetail .top{
+        display: flex;  
+        flex-direction: column;
+    }
 
     .coursedetail h3{
         text-align: center;
