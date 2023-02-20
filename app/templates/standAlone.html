@@ -23,10 +23,22 @@
 {% block content %}
 
 <div class="container coursedetail" style="padding: 25px 40px;">
-    <div class="row">
-        <h3>Beginner Level Courses</h3>
+    <div class="row top">
+        <div class="col">
+            <h3>Beginner Level Courses</h3>
+        </div>
+        <div class="col">
+            <form method="POST" autocomplete="off" id="search-form" >
+                {% csrf_token %}
+                <div class="inputWithIcon">
+                    <input id="search-input" class="search" type="search" placeholder="Search..." autofocus />
+                    <ion-icon name="search-outline"></ion-icon>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
 <div class="container table" id="table">
     <div class="row">
         <div class="col-md-12 column">
@@ -35,7 +47,7 @@
 
                     <tbody id="silver">
                         {% for s in stand %}
-                        <tr>
+                        <tr class='outers'>
                             <td>
                                 <div class="card" style="width: 100%;">
                                     <div class="row">
@@ -80,42 +92,20 @@
 </div>
 
 <script>
-    function myFunction1() {
-        var x = document.getElementById("silver");
-        var y = document.getElementById("gold");
-        var btnx = document.getElementById("silverList")
-        var btny = document.getElementById("goldList")
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            y.style.display = "none";
-            btnx.classList.add("btn-style");
-            btny.classList.remove("btn-style");
-        } 
-        else {
-            x.style.display = "block";
-            y.style.display = "none";
-            btnx.classList.add("btn-style");
-            btny.classList.remove("btn-style");
-        }
-    }
-    
-    function myFunction2() {
-        var x = document.getElementById("silver");
-        var y = document.getElementById("gold");
-        var btnx = document.getElementById("silverList")
-        var btny = document.getElementById("goldList")
-        if (x.style.display === "block") {
-            x.style.display = "none";
-            y.style.display = "block";
-            btnx.classList.remove("btn-style");
-            btny.classList.add("btn-style");
-        } 
-        else {
-            x.style.display = "none";
-            y.style.display = "block";
-            btnx.classList.remove("btn-style");
-            btny.classList.add("btn-style");
-        }
-    }
+    const input = document.getElementById('search-input')
+    input.addEventListener('keyup', (e) => {
+        var inputs = e.target.value.toLowerCase(); //do lowercase
+        //loop through outer div and hide it
+        document.querySelectorAll('.outers').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        //loop through outer ->card-title
+        document.querySelectorAll('.outers .card-title').forEach(function(el) {
+            //compare 
+            if (el.textContent.toLowerCase().indexOf(inputs) > -1) {
+                el.closest('.outers').style.display = "table-row"; //if match show that div
+            }
+        })
+    })
 </script>
 {% endblock %}
